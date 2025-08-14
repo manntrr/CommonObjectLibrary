@@ -1,4 +1,6 @@
-﻿namespace TestComonObject;
+﻿using CommonObject;
+
+namespace TestComonObject;
 
 public class Tests
 {
@@ -10,6 +12,7 @@ public class Tests
     [Test]
     public void Test1()
     {
+        CommonObject commonObject = new CommonObject();
         Assert.Pass();
     }
 }
