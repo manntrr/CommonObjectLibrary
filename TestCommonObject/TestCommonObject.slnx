@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="../CommonObject/CommonObject.csproj" />
-  <Project Path="TestCommonObject/TestCommonObject.csproj" />
-</Solution>
