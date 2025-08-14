@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TestComonObject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+395575fa131af531876991b1fb037f44363f42d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80de6c09fd860b5d7701ef481210e2a276f41135")]
 [assembly: System.Reflection.AssemblyProductAttribute("TestComonObject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TestComonObject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
