@@ -1,6 +1,6 @@
 ﻿namespace CommonObjectLibrary;
 
-public class Class1
+public class CommonObject : Object
 {
 
 }
