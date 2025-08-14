@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj": {}
+    "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj": {}
   },
   "projects": {
-    "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj": {
+    "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj",
+        "projectUniqueName": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj",
         "projectName": "CommonObject",
-        "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj",
+        "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\CommonObject.csproj",
         "packagesPath": "C:\\Users\\p40007y\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\obj\\",
+        "outputPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObject\\CommonObject\\CommonObject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
