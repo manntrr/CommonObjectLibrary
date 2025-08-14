@@ -1,0 +1,6 @@
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\TestCommonObject\obj\Debug\net9.0\TestCommonObject.csproj.AssemblyReference.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\TestCommonObject\obj\Debug\net9.0\TestCommonObject.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\TestCommonObject\obj\Debug\net9.0\TestCommonObject.AssemblyInfoInputs.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\TestCommonObject\obj\Debug\net9.0\TestCommonObject.AssemblyInfo.cs
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\TestCommonObject\obj\Debug\net9.0\TestCommonObject.csproj.CoreCompileInputs.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\TestCommonObject\obj\Debug\net9.0\TestCommonObject.sourcelink.json
