@@ -1,6 +1,6 @@
 ﻿namespace CommonObject;
 
-public class Class1
+public class CommonObject
 {
 
 }

@@ -1,0 +1,12 @@
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\bin\Debug\net9.0\CommonObject.deps.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\bin\Debug\net9.0\CommonObject.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\bin\Debug\net9.0\CommonObject.pdb
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.AssemblyInfoInputs.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.AssemblyInfo.cs
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.csproj.CoreCompileInputs.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.sourcelink.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\refint\CommonObject.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\CommonObject.pdb
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObject\CommonObject\CommonObject\obj\Debug\net9.0\ref\CommonObject.dll
