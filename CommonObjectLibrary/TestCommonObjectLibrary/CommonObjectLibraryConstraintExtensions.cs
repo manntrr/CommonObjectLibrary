@@ -1,20 +1,19 @@
-using CommonObjectLibrary;
-using CommonObject = CommonObjectLibrary.CommonObject;
-using CommonObjectInterface = CommonObjectLibrary.ICommonObject;
-
 namespace NUnit.Framework.Constraints;
+
+using Object = CommonObjectLibrary.CommonObject;
+using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
 public static class CommonObjectLibraryConstraintExtensions
 {
-    public static CommonObjectEqualConstraint CommonObjectEqual(this ConstraintExpression expression, CommonObject context, CommonObject expected)
+    public static ObjectEqualConstraint Equal(this ConstraintExpression expression, Object context, Object expected)
     {
-        var constraint = new CommonObjectEqualConstraint(context, expected);
+        var constraint = new ObjectEqualConstraint(context, expected);
         expression.Append(constraint);
         return constraint;
     }
-    public static CommonObjectInterfaceEqualConstraint CommonObjectInterfaceEqual(this ConstraintExpression expression, CommonObjectInterface context, CommonObjectInterface expected)
+    public static ObjectInterfaceEqualConstraint Equal(this ConstraintExpression expression, ObjectInterface context, ObjectInterface expected)
     {
-        var constraint = new CommonObjectInterfaceEqualConstraint(context, expected);
+        var constraint = new ObjectInterfaceEqualConstraint(context, expected);
         expression.Append(constraint);
         return constraint;
     }

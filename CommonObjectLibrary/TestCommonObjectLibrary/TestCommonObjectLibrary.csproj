@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+  <ProjectReference Include="..\\CommonTesting\\CommonTesting.csproj" />
   <ProjectReference Include="..\\CommonObjectLibrary\\CommonObjectLibrary.csproj" />
   </ItemGroup>
 

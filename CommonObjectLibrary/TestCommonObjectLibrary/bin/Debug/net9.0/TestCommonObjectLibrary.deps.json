@@ -9,6 +9,7 @@
       "TestCommonObjectLibrary/1.0.0": {
         "dependencies": {
           "CommonObjectLibrary": "1.0.0",
+          "CommonTesting": "1.0.0",
           "Microsoft.NET.Test.Sdk": "17.12.0",
           "NUnit": "4.2.2",
           "NUnit.Analyzers": "4.4.0",
@@ -304,8 +305,31 @@
       "NUnit3TestAdapter/4.6.0": {},
       "System.Reflection.Metadata/1.6.0": {},
       "CommonObjectLibrary/1.0.0": {
+        "dependencies": {
+          "CommonTesting": "1.0.0",
+          "Microsoft.NET.Test.Sdk": "17.12.0",
+          "NUnit": "4.2.2",
+          "NUnit.Analyzers": "4.4.0",
+          "NUnit3TestAdapter": "4.6.0",
+          "coverlet.collector": "6.0.2"
+        },
         "runtime": {
           "CommonObjectLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CommonTesting/1.0.0": {
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.12.0",
+          "NUnit": "4.2.2",
+          "NUnit.Analyzers": "4.4.0",
+          "NUnit3TestAdapter": "4.6.0",
+          "coverlet.collector": "6.0.2"
+        },
+        "runtime": {
+          "CommonTesting.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -390,6 +414,11 @@
       "hashPath": "system.reflection.metadata.1.6.0.nupkg.sha512"
     },
     "CommonObjectLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommonTesting/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

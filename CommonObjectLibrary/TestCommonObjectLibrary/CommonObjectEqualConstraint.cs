@@ -1,15 +1,13 @@
-using CommonObjectLibrary;
-using CommonObject = CommonObjectLibrary.CommonObject;
-using CommonObjectInterface = CommonObjectLibrary.ICommonObject;
-
 namespace NUnit.Framework.Constraints;
 
-public class CommonObjectEqualConstraint : Constraint
+using Object = CommonObjectLibrary.CommonObject;
+
+public class ObjectEqualConstraint : Constraint
 {
-    public CommonObject Context { get; }
-    public CommonObject Expected { get; }
-    public override string Description { get => $"CommonObject Equal expected value: {Expected}"; }
-    public CommonObjectEqualConstraint(CommonObject context, CommonObject expected)
+    public Object Context { get; }
+    public Object Expected { get; }
+    public override string Description { get => $"Common Object Equal expected value: {Expected}"; }
+    public ObjectEqualConstraint(Object context, Object expected)
     {
         Context = context;
         Expected = expected;
@@ -19,11 +17,11 @@ public class CommonObjectEqualConstraint : Constraint
         bool isMatch = true;
         try
         {
-            Assert.That(actual, Is.InstanceOf<CommonObject>());
+            Assert.That(actual, Is.InstanceOf<Object>());
             Assert.That(actual, Is.Not.Null);
-            var commonObject = actual as CommonObject;
-            Assert.That(commonObject, Is.Not.Null);
-            Assert.That(commonObject, Is.InstanceOf<CommonObject>());
+            var obj = actual as Object;
+            Assert.That(obj, Is.Not.Null);
+            Assert.That(obj, Is.InstanceOf<Object>());
             isMatch = false; //TODO: complete the test for equality of the instance
             /*
             Assert.That(commonObject, Is.GenresCountEqual(_expectedValue.Count));

@@ -102,3 +102,9 @@ c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibr
 c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\obj\Debug\net9.0\TestCommonObjectLibrary.pdb
 c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\obj\Debug\net9.0\TestCommonObjectLibrary.genruntimeconfig.cache
 c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\obj\Debug\net9.0\ref\TestCommonObjectLibrary.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\bin\Debug\net9.0\CommonTesting.deps.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\bin\Debug\net9.0\CommonTesting.runtimeconfig.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\bin\Debug\net9.0\CommonObjectLibrary.deps.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\bin\Debug\net9.0\CommonObjectLibrary.runtimeconfig.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\bin\Debug\net9.0\CommonTesting.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\TestCommonObjectLibrary\bin\Debug\net9.0\CommonTesting.pdb

@@ -1,18 +1,18 @@
-using CommonObjectLibrary;
-using CommonObject = CommonObjectLibrary.CommonObject;
-using CommonObjectInterface = CommonObjectLibrary.ICommonObject;
-
 namespace NUnit.Framework.Constraints;
 
-public class Is : NUnit.Framework.Is
+using Object = CommonObjectLibrary.CommonObject;
+using ObjectInterface = CommonObjectLibrary.ICommonObject;
+using BaseIs = /*NUnit./**/Framework.Is;
+
+public class Is : BaseIs
 {
-    public static CommonObjectEqualConstraint CommonObjectEqual(CommonObject context, CommonObject expected)
+    public static ObjectEqualConstraint Equal(Object context, Object expected)
     {
-        return new CommonObjectEqualConstraint(context, expected);
+        return new ObjectEqualConstraint(context, expected);
     }
-    public static CommonObjectInterfaceEqualConstraint CommonObjectInterfaceEqual(CommonObjectInterface context, CommonObjectInterface expected)
+    public static ObjectInterfaceEqualConstraint Equal(ObjectInterface context, ObjectInterface expected)
     {
-        return new CommonObjectInterfaceEqualConstraint(context, expected);
+        return new ObjectInterfaceEqualConstraint(context, expected);
     }
     /*
     public static GenreElementsEqualConstraint GenreElementsEqual(_Heroes context, string expectedKey, string expectedName, CampaignKeySet expectedCampaignKeys, PlayerKeySet expectedPlayerKeys, GameMasterKeySet expectedGameMasterKeys)

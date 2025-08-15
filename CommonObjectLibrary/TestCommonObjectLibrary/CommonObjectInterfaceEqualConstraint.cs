@@ -1,15 +1,13 @@
-using CommonObjectLibrary;
-using CommonObject = CommonObjectLibrary.CommonObject;
-using CommonObjectInterface = CommonObjectLibrary.ICommonObject;
-
 namespace NUnit.Framework.Constraints;
 
-public class CommonObjectInterfaceEqualConstraint : Constraint
+using ObjectInterface = CommonObjectLibrary.ICommonObject;
+
+public class ObjectInterfaceEqualConstraint : Constraint
 {
-    public CommonObjectInterface Context { get; }
-    public CommonObjectInterface Expected { get; }
-    public override string Description { get => $"CommonObjectInterface Equal expected value: {Expected}"; }
-    public CommonObjectInterfaceEqualConstraint(CommonObjectInterface context, CommonObjectInterface expected)
+    public ObjectInterface Context { get; }
+    public ObjectInterface Expected { get; }
+    public override string Description { get => $"Common ObjectInterface Equal expected value: {Expected}"; }
+    public ObjectInterfaceEqualConstraint(ObjectInterface context, ObjectInterface expected)
     {
         Context = context;
         Expected = expected;
@@ -19,11 +17,11 @@ public class CommonObjectInterfaceEqualConstraint : Constraint
         bool isMatch = true;
         try
         {
-            Assert.That(actual, Is.InstanceOf<CommonObjectInterface>());
+            Assert.That(actual, Is.InstanceOf<ObjectInterface>());
             Assert.That(actual, Is.Not.Null);
-            var commonObject = actual as CommonObjectInterface;
-            Assert.That(commonObject, Is.Not.Null);
-            Assert.That(commonObject, Is.InstanceOf<CommonObjectInterface>());
+            var obj = actual as ObjectInterface;
+            Assert.That(obj, Is.Not.Null);
+            Assert.That(obj, Is.InstanceOf<ObjectInterface>());
             isMatch = false; //TODO: complete the test for equality of the instance
             /*
             Assert.That(commonObject, Is.GenresCountEqual(_expectedValue.Count));

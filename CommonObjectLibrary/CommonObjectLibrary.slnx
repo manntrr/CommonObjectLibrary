@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="CommonTesting/CommonTesting.csproj" />
   <Project Path="CommonObjectLibrary/CommonObjectLibrary.csproj" />
   <Project Path="TestCommonObjectLibrary/TestCommonObjectLibrary.csproj" />
 </Solution>

@@ -350,11 +350,36 @@
       "CommonObjectLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CommonTesting": "1.0.0",
+          "Microsoft.NET.Test.Sdk": "17.12.0",
+          "NUnit": "4.2.2",
+          "NUnit.Analyzers": "4.4.0",
+          "NUnit3TestAdapter": "4.6.0",
+          "coverlet.collector": "6.0.2"
+        },
         "compile": {
           "bin/placeholder/CommonObjectLibrary.dll": {}
         },
         "runtime": {
           "bin/placeholder/CommonObjectLibrary.dll": {}
+        }
+      },
+      "CommonTesting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.12.0",
+          "NUnit": "4.2.2",
+          "NUnit.Analyzers": "4.4.0",
+          "NUnit3TestAdapter": "4.6.0",
+          "coverlet.collector": "6.0.2"
+        },
+        "compile": {
+          "bin/placeholder/CommonTesting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonTesting.dll": {}
         }
       }
     }
@@ -808,11 +833,17 @@
       "type": "project",
       "path": "../CommonObjectLibrary/CommonObjectLibrary.csproj",
       "msbuildProject": "../CommonObjectLibrary/CommonObjectLibrary.csproj"
+    },
+    "CommonTesting/1.0.0": {
+      "type": "project",
+      "path": "../CommonTesting/CommonTesting.csproj",
+      "msbuildProject": "../CommonTesting/CommonTesting.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "CommonObjectLibrary >= 1.0.0",
+      "CommonTesting >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.12.0",
       "NUnit >= 4.2.2",
       "NUnit.Analyzers >= 4.4.0",
@@ -854,6 +885,9 @@
           "projectReferences": {
             "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj": {
               "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj"
+            },
+            "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
+              "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
             }
           }
         }
