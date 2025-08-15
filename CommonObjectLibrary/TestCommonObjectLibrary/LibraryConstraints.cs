@@ -3,15 +3,15 @@ namespace NUnit.Framework.Constraints;
 using Object = CommonObjectLibrary.CommonObject;
 using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
-public static class CommonObjectLibraryConstraints
+public static class LibraryConstraints
 {
-    public static ObjectEqualConstraint Equal(Object context, Object expected)
+    public static ObjectEqualConstraint Equal(/*Object context, /**/Object expected)
     {
-        return new ObjectEqualConstraint(context, expected);
+        return new ObjectEqualConstraint(/*context, /**/expected);
     }
-    public static ObjectInterfaceEqualConstraint Equal(ObjectInterface context, ObjectInterface expected)
+    public static ObjectInterfaceEqualConstraint Equal(/*ObjectInterface context, /**/ObjectInterface expected)
     {
-        return new ObjectInterfaceEqualConstraint(context, expected);
+        return new ObjectInterfaceEqualConstraint(/*context, /**/expected);
     }
     /*
     public static GenresContainGenreConstraint GenresContainGenre(_Heroes context, Genre expected)

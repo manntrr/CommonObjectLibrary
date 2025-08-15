@@ -3,17 +3,17 @@ namespace NUnit.Framework.Constraints;
 using Object = CommonObjectLibrary.CommonObject;
 using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
-public static class CommonObjectLibraryConstraintExtensions
+public static class LibraryConstraintExtensions
 {
-    public static ObjectEqualConstraint Equal(this ConstraintExpression expression, Object context, Object expected)
+    public static ObjectEqualConstraint Equal(this ConstraintExpression expression, /*Object context, /**/Object expected)
     {
-        var constraint = new ObjectEqualConstraint(context, expected);
+        var constraint = new ObjectEqualConstraint(/*context, /**/expected);
         expression.Append(constraint);
         return constraint;
     }
-    public static ObjectInterfaceEqualConstraint Equal(this ConstraintExpression expression, ObjectInterface context, ObjectInterface expected)
+    public static ObjectInterfaceEqualConstraint Equal(this ConstraintExpression expression, /*ObjectInterface context, /**/ObjectInterface expected)
     {
-        var constraint = new ObjectInterfaceEqualConstraint(context, expected);
+        var constraint = new ObjectInterfaceEqualConstraint(/*context, /**/expected);
         expression.Append(constraint);
         return constraint;
     }

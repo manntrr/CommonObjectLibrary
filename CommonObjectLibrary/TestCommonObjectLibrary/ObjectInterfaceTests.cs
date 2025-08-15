@@ -3,6 +3,7 @@
 using Object = CommonObjectLibrary.CommonObject;
 using ObjectInterface = CommonObjectLibrary.ICommonObject;
 using CommonObjectLibraryTestsInterface = ICommonObjectLibraryTests;
+using Is = NUnit.Framework.Constraints.Is;
 
 public class CommonObjectInterfaceTests : CommonObjectLibraryTestsInterface
 {
@@ -18,7 +19,7 @@ public class CommonObjectInterfaceTests : CommonObjectLibraryTestsInterface
     public void TestCommonObjectLibrary()
     {
         Object obj = new();
-        Assert.That(/*Is./**/Equals(obj, obj));
+        Assert.That(obj, Is.Equal(obj));
     }
 
     static readonly TestCaseData[] NullConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullConstructorTest), ObjectInterface.TEST_CASE_DATA);

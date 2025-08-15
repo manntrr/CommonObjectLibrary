@@ -1,15 +1,15 @@
 namespace NUnit.Framework.Constraints;
 
-using Object = CommonObjectLibrary.CommonObject;
+using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
-public class ObjectEqualConstraint : Constraint
+public class ObjectInterfaceEqualConstraint : Constraint
 {
-    public Object Context { get; }
-    public Object Expected { get; }
-    public override string Description { get => $"Common Object Equal expected value: {Expected}"; }
-    public ObjectEqualConstraint(Object context, Object expected)
+    //public ObjectInterface Context { get; }
+    public ObjectInterface Expected { get; }
+    public override string Description { get => $"Common ObjectInterface Equal expected value: {Expected}"; }
+    public ObjectInterfaceEqualConstraint(/*ObjectInterface context,*/ ObjectInterface expected)
     {
-        Context = context;
+        //Context = context;
         Expected = expected;
     }
     public override ConstraintResult ApplyTo<TActual>(TActual actual)
@@ -17,11 +17,12 @@ public class ObjectEqualConstraint : Constraint
         bool isMatch = true;
         try
         {
-            Assert.That(actual, Is.InstanceOf<Object>());
+            Assert.That(actual, Is.InstanceOf<ObjectInterface>());
             Assert.That(actual, Is.Not.Null);
-            var obj = actual as Object;
+            var obj = actual as ObjectInterface;
             Assert.That(obj, Is.Not.Null);
-            Assert.That(obj, Is.InstanceOf<Object>());
+            Assert.That(obj, Is.InstanceOf<ObjectInterface>());
+            Assert.That(Expected.Count, Is.EqualTo(obj.Count));
             isMatch = false; //TODO: complete the test for equality of the instance
             /*
             Assert.That(commonObject, Is.GenresCountEqual(_expectedValue.Count));
