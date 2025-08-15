@@ -1,0 +1,12 @@
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\bin\Debug\net9.0\CommonObjectLibrary.deps.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\bin\Debug\net9.0\CommonObjectLibrary.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\bin\Debug\net9.0\CommonObjectLibrary.pdb
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.AssemblyInfoInputs.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.AssemblyInfo.cs
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.csproj.CoreCompileInputs.cache
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.sourcelink.json
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\refint\CommonObjectLibrary.dll
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\CommonObjectLibrary.pdb
+c:\Users\p40007y\OneDrive - BYU-Idaho\Documents\Projects\Common\CommonObjectLibrary\CommonObjectLibrary\CommonObjectLibrary\obj\Debug\net9.0\ref\CommonObjectLibrary.dll
