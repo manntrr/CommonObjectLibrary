@@ -5,15 +5,15 @@ using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
 public static class LibraryConstraintExtensions
 {
-    public static ObjectEqualConstraint Equal(this ConstraintExpression expression, /*Object context, /**/Object expected)
+    public static ObjectEqualToConstraint EqualTo(this ConstraintExpression expression, /*Object context, /**/Object expected)
     {
-        var constraint = new ObjectEqualConstraint(/*context, /**/expected);
+        var constraint = new ObjectEqualToConstraint(/*context, /**/expected);
         expression.Append(constraint);
         return constraint;
     }
-    public static ObjectInterfaceEqualConstraint Equal(this ConstraintExpression expression, /*ObjectInterface context, /**/ObjectInterface expected)
+    public static ObjectInterfaceEqualToConstraint EqualTo(this ConstraintExpression expression, /*ObjectInterface context, /**/ObjectInterface expected)
     {
-        var constraint = new ObjectInterfaceEqualConstraint(/*context, /**/expected);
+        var constraint = new ObjectInterfaceEqualToConstraint(/*context, /**/expected);
         expression.Append(constraint);
         return constraint;
     }

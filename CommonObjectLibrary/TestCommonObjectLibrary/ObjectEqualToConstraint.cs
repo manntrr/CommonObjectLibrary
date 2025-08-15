@@ -2,12 +2,12 @@ namespace NUnit.Framework.Constraints;
 
 using Object = CommonObjectLibrary.CommonObject;
 
-public class ObjectEqualConstraint : Constraint
+public class ObjectEqualToConstraint : Constraint
 {
     //public Object Context { get; }
     public Object Expected { get; }
     public override string Description { get => $"Common Object Equal expected value: {Expected}"; }
-    public ObjectEqualConstraint(/*Object context, /**/Object expected)
+    public ObjectEqualToConstraint(/*Object context, /**/Object expected)
     {
         //Context = context;
         Expected = expected;
@@ -32,7 +32,7 @@ public class ObjectEqualConstraint : Constraint
             }
             /**/
         }
-        catch (Exception exception)
+        catch (Exception)
         {
             isMatch = false;
         }

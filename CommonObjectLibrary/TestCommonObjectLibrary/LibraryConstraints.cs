@@ -5,13 +5,13 @@ using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
 public static class LibraryConstraints
 {
-    public static ObjectEqualConstraint Equal(/*Object context, /**/Object expected)
+    public static ObjectEqualToConstraint EqualTo(/*Object context, /**/Object expected)
     {
-        return new ObjectEqualConstraint(/*context, /**/expected);
+        return new ObjectEqualToConstraint(/*context, /**/expected);
     }
-    public static ObjectInterfaceEqualConstraint Equal(/*ObjectInterface context, /**/ObjectInterface expected)
+    public static ObjectInterfaceEqualToConstraint EqualTo(/*ObjectInterface context, /**/ObjectInterface expected)
     {
-        return new ObjectInterfaceEqualConstraint(/*context, /**/expected);
+        return new ObjectInterfaceEqualToConstraint(/*context, /**/expected);
     }
     /*
     public static GenresContainGenreConstraint GenresContainGenre(_Heroes context, Genre expected)

@@ -6,13 +6,13 @@ using BaseIs = /*NUnit./**/Framework.Is;
 
 public class Is : BaseIs
 {
-    public static ObjectEqualConstraint Equal(/*Object context, /**/Object expected)
+    public static ObjectEqualToConstraint EqualTo(/*Object context, /**/Object expected)
     {
-        return new ObjectEqualConstraint(/*context, /**/expected);
+        return new ObjectEqualToConstraint(/*context, /**/expected);
     }
-    public static ObjectInterfaceEqualConstraint Equal(/*ObjectInterface context, /**/ObjectInterface expected)
+    public static ObjectInterfaceEqualToConstraint EqualTo(/*ObjectInterface context, /**/ObjectInterface expected)
     {
-        return new ObjectInterfaceEqualConstraint(/*context, /**/expected);
+        return new ObjectInterfaceEqualToConstraint(/*context, /**/expected);
     }
     /*
     public static GenreElementsEqualConstraint GenreElementsEqual(_Heroes context, string expectedKey, string expectedName, CampaignKeySet expectedCampaignKeys, PlayerKeySet expectedPlayerKeys, GameMasterKeySet expectedGameMasterKeys)

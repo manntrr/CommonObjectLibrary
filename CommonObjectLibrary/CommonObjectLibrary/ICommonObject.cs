@@ -6,48 +6,57 @@ using Object = CommonObject;
 using ObjectInterface = ICommonObject;
 using TCDD = /*NUnit.Framework./**/TestCaseDataDictionary;
 using TCsDD = /*NUnit.Framework./**/TestCasesDataDictionary;
-using COLTs = TestCommonObjectLibrary.ICommonObjectLibraryTests;
+using COLTs = TestCommonObjectLibrary.ILibraryTests;
 
-public interface ICommonObject : IDictionary<string, ObjectInterface>
+public interface ICommonObject : IDictionary<string, System.Object>
 {
     bool isReadOnly { get; set; }
     ICollection<string> BaseKeys { get; }
-    ICollection<Object> BaseValues { get; }
+    ICollection<System.Object> BaseValues { get; }
     int BaseCount { get; }
-    void BaseAdd(string key, Object value);
-    void BaseAdd(KeyValuePair<string, Object> item);
+    void BaseAdd(string key, System.Object value);
+    void BaseAdd(KeyValuePair<string, System.Object> item);
     void BaseClear();
-    bool BaseContains(KeyValuePair<string, Object> item);
+    bool BaseContains(KeyValuePair<string, System.Object> item);
     bool BaseContainsKey(string key);
-    void BaseCopyTo(KeyValuePair<string, Object>[] array, int arrayIndex);
-    IEnumerator<KeyValuePair<string, Object>> BaseGetPairEnumerator();
+    void BaseCopyTo(KeyValuePair<string, System.Object>[] array, int arrayIndex);
+    IEnumerator<KeyValuePair<string, System.Object>> BaseGetPairEnumerator();
     IEnumerator BaseGetEnumerator();
     bool BaseRemove(string key);
-    bool BaseRemove(KeyValuePair<string, Object> item);
-    bool BaseTryGetValue(string key, out Object value);
-    public ObjectInterface GetByKey(string key);
-    public void SetByKey(string key, ObjectInterface value);
+    bool BaseRemove(KeyValuePair<string, System.Object> item);
+    bool BaseTryGetValue(string key, out System.Object value);
+    public System.Object GetByKey(string key);
+    public void SetByKey(string key, System.Object value);
     public ICollection<string> GetKeys();
-    public ICollection<ObjectInterface> GetValues();
+    public ICollection<System.Object> GetValues();
     public int GetCount();
     public bool GetIsReadOnly();
-    new public void Add(string key, ObjectInterface value);
-    new public void Add(KeyValuePair<string, ObjectInterface> item);
+    new public void Add(string key, System.Object value);
+    new public void Add(KeyValuePair<string, System.Object> item);
     new public void Clear();
-    new public bool Contains(KeyValuePair<string, ObjectInterface> item);
+    new public bool Contains(KeyValuePair<string, System.Object> item);
     new public bool ContainsKey(string key);
-    new public void CopyTo(KeyValuePair<string, ObjectInterface>[] array, int arrayIndex);
-    public IEnumerator<KeyValuePair<string, ObjectInterface>> GetPairEnumerator();
+    new public void CopyTo(KeyValuePair<string, System.Object>[] array, int arrayIndex);
+    public IEnumerator<KeyValuePair<string, System.Object>> GetPairEnumerator();
     new public IEnumerator GetEnumerator();
     new public bool Remove(string key);
-    new public bool Remove(KeyValuePair<string, ObjectInterface> item);
-    new public bool TryGetValue(string key, out ObjectInterface value);
+    new public bool Remove(KeyValuePair<string, System.Object> item);
+    new public bool TryGetValue(string key, out System.Object value);
+    public void Init();
+    public void Init(ObjectInterface originalObject);
+    public void Init(Object originalObject);
+    public void Init(IDictionary<string, System.Object> originalObject);
+    public void Init(Dictionary<string, System.Object> originalObject);
+    public void Init(KeyValuePair<string, System.Object> originalObject);
+    public void Init(KeyValuePair<string, System.Object>[] objects);
+    public void Init(string[] keys, System.Object[] objects);
+    public void Init(System.Object[] objects);
 
-    public static ObjectInterface GET_BY_KEY(ObjectInterface _object, string key)
+    public static System.Object GET_BY_KEY(ObjectInterface _object, string key)
     {
         return _object[key];
     }
-    public static void SET_BY_KEY(ObjectInterface _object, string key, ObjectInterface value)
+    public static void SET_BY_KEY(ObjectInterface _object, string key, System.Object value)
     {
         _object[key] = value;
     }
@@ -55,9 +64,9 @@ public interface ICommonObject : IDictionary<string, ObjectInterface>
     {
         return _object.BaseKeys;
     }
-    public static ICollection<ObjectInterface> GET_VALUES(ObjectInterface _object)
+    public static ICollection<System.Object> GET_VALUES(ObjectInterface _object)
     {
-        return (ICollection<ObjectInterface>)_object.BaseValues;
+        return (ICollection<System.Object>)_object.BaseValues;
     }
     public static int GET_COUNT(ObjectInterface _object)
     {
@@ -67,36 +76,36 @@ public interface ICommonObject : IDictionary<string, ObjectInterface>
     {
         return _object.isReadOnly;
     }
-    public static void ADD(ObjectInterface _object, string key, ObjectInterface value)
+    public static void ADD(ObjectInterface _object, string key, System.Object value)
     {
-        _object.BaseAdd(key, (Object)value);
+        _object.BaseAdd(key, (System.Object)value);
     }
-    public static void ADD(ObjectInterface _object, KeyValuePair<string, ObjectInterface> item)
+    public static void ADD(ObjectInterface _object, KeyValuePair<string, System.Object> item)
     {
-        _object.BaseAdd(new KeyValuePair<string, Object>(key: item.Key, value: (Object)item.Value));
+        _object.BaseAdd(new KeyValuePair<string, System.Object>(key: item.Key, value: (System.Object)item.Value));
     }
     public static void CLEAR(ObjectInterface _object)
     {
         _object.BaseClear();
     }
-    public static bool CONTAINS(ObjectInterface _object, KeyValuePair<string, ObjectInterface> item)
+    public static bool CONTAINS(ObjectInterface _object, KeyValuePair<string, System.Object> item)
     {
-        return _object.BaseContains(new KeyValuePair<string, Object>(key: item.Key, value: (Object)item.Value));
+        return _object.BaseContains(new KeyValuePair<string, System.Object>(key: item.Key, value: (System.Object)item.Value));
     }
     public static bool CONTAINS_KEY(ObjectInterface _object, string key)
     {
         return _object.BaseContainsKey(key);
     }
-    public static void COPY_TO(ObjectInterface _object, KeyValuePair<string, ObjectInterface>[] array, int arrayIndex)
+    public static void COPY_TO(ObjectInterface _object, KeyValuePair<string, System.Object>[] array, int arrayIndex)
     {
-        KeyValuePair<string, Object>[] temp = new KeyValuePair<string, Object>[array.Length];
-        for (int i = 0; i < array.Length; i++) temp[i] = new(array[i].Key, (Object)array[i].Value);
+        KeyValuePair<string, System.Object>[] temp = new KeyValuePair<string, System.Object>[array.Length];
+        for (int i = 0; i < array.Length; i++) temp[i] = new(array[i].Key, (System.Object)array[i].Value);
         _object.BaseCopyTo(temp, arrayIndex);
     }
-    public static IEnumerator<KeyValuePair<string, ObjectInterface>> GET_PAIR_ENUMERATOR(ObjectInterface _object)
+    public static IEnumerator<KeyValuePair<string, System.Object>> GET_PAIR_ENUMERATOR(ObjectInterface _object)
     {
-        IEnumerator<KeyValuePair<string, Object>> temp = _object.BaseGetPairEnumerator();
-        List<KeyValuePair<string, ObjectInterface>> result = [];
+        IEnumerator<KeyValuePair<string, System.Object>> temp = _object.BaseGetPairEnumerator();
+        List<KeyValuePair<string, System.Object>> result = [];
         while (temp.MoveNext())
             result.Add(new(temp.Current.Key, temp.Current.Value));
         return result.GetEnumerator();
@@ -109,16 +118,52 @@ public interface ICommonObject : IDictionary<string, ObjectInterface>
     {
         return _object.BaseRemove(key);
     }
-    public static bool REMOVE(ObjectInterface _object, KeyValuePair<string, ObjectInterface> item)
+    public static bool REMOVE(ObjectInterface _object, KeyValuePair<string, System.Object> item)
     {
-        return _object.BaseRemove(new KeyValuePair<string, Object>(key: item.Key, value: (Object)item.Value));
+        return _object.BaseRemove(new KeyValuePair<string, System.Object>(key: item.Key, value: (System.Object)item.Value));
     }
-    public static bool TRY_GET_VALUE(ObjectInterface _object, string key, out ObjectInterface value)
+    public static bool TRY_GET_VALUE(ObjectInterface _object, string key, out System.Object value)
     {
-        Object temp;
+        System.Object temp;
         bool result = _object.BaseTryGetValue(key, out temp);
         value = temp;
         return result;
+    }
+    public static void INIT(ObjectInterface newObject)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, ObjectInterface originalObject)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, Object originalObject)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, IDictionary<string, System.Object> originalObject)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, Dictionary<string, System.Object> originalObject)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, KeyValuePair<string, System.Object> originalObject)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, KeyValuePair<string, System.Object>[] objects)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, string[] keys, System.Object[] objects)
+    {
+        throw new NotImplementedException();
+    }
+    public static void INIT(ObjectInterface newObject, System.Object[] objects)
+    {
+        throw new NotImplementedException();
     }
     static readonly TCsDD TEST_CASE_DATA = new([
         // TODO:  complete test case data

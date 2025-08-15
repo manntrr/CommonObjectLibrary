@@ -2,12 +2,12 @@ namespace NUnit.Framework.Constraints;
 
 using ObjectInterface = CommonObjectLibrary.ICommonObject;
 
-public class ObjectInterfaceEqualConstraint : Constraint
+public class ObjectInterfaceEqualToConstraint : Constraint
 {
     //public ObjectInterface Context { get; }
     public ObjectInterface Expected { get; }
     public override string Description { get => $"Common ObjectInterface Equal expected value: {Expected}"; }
-    public ObjectInterfaceEqualConstraint(/*ObjectInterface context,*/ ObjectInterface expected)
+    public ObjectInterfaceEqualToConstraint(/*ObjectInterface context,*/ ObjectInterface expected)
     {
         //Context = context;
         Expected = expected;
@@ -32,7 +32,7 @@ public class ObjectInterfaceEqualConstraint : Constraint
             }
             /**/
         }
-        catch (Exception exception)
+        catch (Exception)
         {
             isMatch = false;
         }
