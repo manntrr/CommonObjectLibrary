@@ -1,5 +1,11 @@
 using System.Collections;
 
+using CommonObjectLibrary;
+using CommonObject = CommonObjectLibrary.CommonObject;
+using CommonObjectInterface = CommonObjectLibrary.ICommonObject;
+using TestCasesDataDictionary = NUnit.Framework.TestCasesDataDictionary;
+using UnitTestCommonObjectLibrary = TestCommonObjectLibrary.UnitTestCommonObjectLibrary;
+
 namespace CommonObjectLibrary;
 
 public interface ICommonObject : IDictionary<string, ICommonObject>
@@ -114,4 +120,302 @@ public interface ICommonObject : IDictionary<string, ICommonObject>
         value = temp;
         return result;
     }
+    static readonly TestCasesDataDictionary TEST_CASE_DATA = new([
+        /*new(nameof(UnitTestCommonObjectLibrary.NullConstructorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString],
+            TestCaseCategories: [TCDD.ConstructorString],
+            TestCaseIds: [counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey, DefaultName,
+                    //new CampaignKeySet(Campaigns: new([ICampaigns.CAMPAIGNS["Unknown Campaign"]]), MasterCampaigns: ref ICampaigns.CAMPAIGNS);
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    //new PlayerKeySet(Players: new([IPlayers.PLAYERS["Unknown Player"]]), MasterPlayers: ref IPlayers.PLAYERS);
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    //new GameMasterKeySet(GameMasters: new([IGameMasters.GAME_MASTERS["Unknown Game Master"]]), MasterGameMasters: ref IGameMasters.GAME_MASTERS);
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ]))/**//*,
+        new(nameof(GenreTests.NullInitializorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString],
+            TestCaseCategories: [TCDD.InitializorString],
+            TestCaseIds: [counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.KeyConstructorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.ConstructorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    CustomGenreKeyString, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.KeyInitializorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.InitializorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    CustomGenreKeyString, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.NameConstructorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.ConstructorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    CustomGenreKeyString, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.NameInitializorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.InitializorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    CustomGenreKeyString, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.KeyNameConstructorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.ConstructorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    AlternateCustomGenreKeyString, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.KeyNameInitializorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.InitializorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    AlternateCustomGenreKeyString, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.IndexConstructorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.ConstructorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    1, Genre1String, UnknownGenre1String,
+                    new CampaignKeySet(Campaigns: new([new CampaignObject(Key: Campaign1String)]), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    2, Genre2String, UnknownGenre2String,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.IndexInitializorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.InitializorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    1, Genre1String, UnknownGenre1String,
+                    new CampaignKeySet(Campaigns: new([new CampaignObject(Key: Campaign1String)]), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    2, Genre2String, UnknownGenre2String,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.CopyConstructorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.ConstructorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    AlternateCustomGenreKeyString, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.CopyInitializorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.InitializorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    AlternateCustomGenreKeyString, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.GetKeyAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey
+                    )
+            ])),
+        new(nameof(GenreTests.SetKeyAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    Genre1String, DefaultName,
+                    new CampaignKeySet(Campaigns: new([new CampaignObject(Key: Campaign1String)]), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    CustomGenreKeyString, DefaultName,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.GetNameAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultName
+                    )
+            ])),
+        new(nameof(GenreTests.SetNameAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey, UnknownGenre1String,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    ),
+                new(
+                    DefaultKey, CustomGenreString,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns),
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players),
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ])),
+        new(nameof(GenreTests.GetCampaignKeysAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString(),counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey,
+                    new CampaignKeySet(Campaigns: new(Count: 0), MasterCampaigns: ref campaigns)
+                    ),
+                new(
+                    Genre1String,
+                    new CampaignKeySet(Campaigns: new([new CampaignObject(Key: Campaign1String)]), MasterCampaigns: ref campaigns)
+                    )
+            ])),
+        new(nameof(GenreTests.GetPlayerKeysAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey,
+                    new PlayerKeySet(Players: new(Count: 0), MasterPlayers: ref players)
+                    )
+            ])),
+        new(nameof(GenreTests.GetGameMasterKeysAccessorTest), new(
+            TestCaseDescriptions: [TCDD.EmptyString],
+            TestCaseCategories: [TCDD.AccessorString],
+            TestCaseIds: [counter++.ToString()],
+            TestCaseData: [
+                new(
+                    DefaultKey,
+                    new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
+                    )
+            ]))
+        /**/
+    ]);
 }
