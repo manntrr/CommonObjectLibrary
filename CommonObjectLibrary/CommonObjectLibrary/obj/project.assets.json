@@ -859,8 +859,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
-              "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
+            "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
+              "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
             }
           }
         }
