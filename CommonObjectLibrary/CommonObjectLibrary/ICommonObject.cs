@@ -131,7 +131,6 @@ public interface ICommonObject : IDictionary<string, System.Object>
     }
     public static void INIT(ObjectInterface newObject)
     {
-        throw new NotImplementedException();
     }
     public static void INIT(ObjectInterface newObject, ObjectInterface originalObject)
     {

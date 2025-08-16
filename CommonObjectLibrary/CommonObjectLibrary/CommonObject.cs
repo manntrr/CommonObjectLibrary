@@ -77,7 +77,7 @@ public class CommonObject : Dictionary<string, System.Object>, ObjectInterface
     new public bool Remove(string key) => ObjectInterface.REMOVE(this, key);
     public bool Remove(KeyValuePair<string, System.Object> item) => ObjectInterface.REMOVE(this, item);
     new public bool TryGetValue(string key, out System.Object value) => ObjectInterface.TRY_GET_VALUE(this, key, out value);
-    public CommonObject() => Init();
+    public CommonObject() : base() => Init();
     public CommonObject(ObjectInterface obj) => Init(obj);
     public CommonObject(Object obj) => Init(obj);
     public CommonObject(IDictionary<string, System.Object> obj) => Init(obj);
