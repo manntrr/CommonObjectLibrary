@@ -12,6 +12,11 @@ public class ObjectTests : LibraryTestsInterface
     public void Setup()
     {
     }
+    [Test]
+    public void Test()
+    {
+        Assert.Pass();
+    }
     static readonly TestCaseData[] GetByKeyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetByKeyFunctionTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
     [TestCaseSource(nameof(GetByKeyTestCases))]

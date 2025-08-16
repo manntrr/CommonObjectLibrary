@@ -10,6 +10,7 @@ using COLTs = TestCommonObjectLibrary.ILibraryTests;
 
 public interface ICommonObject : IDictionary<string, System.Object>
 {
+    private static int counter = 0;
     bool isReadOnly { get; set; }
     ICollection<string> BaseKeys { get; }
     ICollection<System.Object> BaseValues { get; }
@@ -166,6 +167,16 @@ public interface ICommonObject : IDictionary<string, System.Object>
     }
     static readonly TCsDD TEST_CASE_DATA = new([
         // TODO:  complete test case data
+        /**/new(nameof(COLTs.GetByKeyFunctionTest), new(
+        TestCaseDescriptions: [TCDD.EmptyString],
+        TestCaseCategories: [TCDD.ConstructorString],
+        TestCaseIds: [counter++.ToString()],
+        TestCaseData: [
+            new(
+                //System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue
+                new CommonObject(), "test", "test"
+                )
+        ]))/**//*,
         /*new(nameof(COLTs.NullConstructorTest), new(
         TestCaseDescriptions: [TCDD.EmptyString],
         TestCaseCategories: [TCDD.ConstructorString],
