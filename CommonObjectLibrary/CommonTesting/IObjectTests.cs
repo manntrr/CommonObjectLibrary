@@ -22,23 +22,23 @@ public interface IObjectTests
         RemovePairTestCases = [],
         TryGetValueTestCases = [],
         NullConstructorTestCases = [],
-        NullInitializorTestCases = [],
+        NullInitializerTestCases = [],
         InterfaceCopyConstructorTestCases = [],
-        InterfaceCopyInitializorTestCases = [],
+        InterfaceCopyInitializerTestCases = [],
         CopyConstructorTestCases = [],
-        CopyInitializorTestCases = [],
+        CopyInitializerTestCases = [],
         DictionaryInterfaceConstructorTestCases = [],
-        DictionaryInterfaceInitializorTestCases = [],
+        DictionaryInterfaceInitializerTestCases = [],
         DictionaryConstructorTestCases = [],
-        DictionaryInitializorTestCases = [],
+        DictionaryInitializerTestCases = [],
         KVPairConstructorTestCases = [],
-        KVPairInitializorTestCases = [],
+        KVPairInitializerTestCases = [],
         KVPairArrayConstructorTestCases = [],
-        KVPairArrayInitializorTestCases = [],
+        KVPairArrayInitializerTestCases = [],
         ElementArraysConstructorTestCases = [],
-        ElementArraysInitializorTestCases = [],
+        ElementArraysInitializerTestCases = [],
         ValueArrayConstructorTestCases = [],
-        ValueArrayInitializorTestCases = [];
+        ValueArrayInitializerTestCases = [];
     [SetUp]
     public void Setup();
     [Test]
@@ -114,54 +114,54 @@ public interface IObjectTests
     [TestCaseSource(nameof(NullConstructorTestCases))]
     public void NullConstructorTest(System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(NullInitializorTestCases))]
-    public void NullInitializorTest(System.Object caseProvidedObject, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(NullInitializerTestCases))]
+    public void NullInitializerTest(System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(InterfaceCopyConstructorTestCases))]
     public void InterfaceCopyConstructorTest(System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(InterfaceCopyInitializorTestCases))]
-    public void InterfaceCopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(InterfaceCopyInitializerTestCases))]
+    public void InterfaceCopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(CopyConstructorTestCases))]
     public void CopyConstructorTest(System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(CopyInitializorTestCases))]
-    public void CopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(CopyInitializerTestCases))]
+    public void CopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(DictionaryInterfaceConstructorTestCases))]
     public void DictionaryInterfaceConstructorTest(IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(DictionaryInterfaceInitializorTestCases))]
-    public void DictionaryInterfaceInitializorTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(DictionaryInterfaceInitializerTestCases))]
+    public void DictionaryInterfaceInitializerTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(DictionaryConstructorTestCases))]
     public void DictionaryConstructorTest(Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(DictionaryInitializorTestCases))]
-    public void DictionaryInitializorTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(DictionaryInitializerTestCases))]
+    public void DictionaryInitializerTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(KVPairConstructorTestCases))]
     public void KVPairConstructorTest(KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(KVPairInitializorTestCases))]
-    public void KVPairInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(KVPairInitializerTestCases))]
+    public void KVPairInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(KVPairArrayConstructorTestCases))]
     public void KVPairArrayConstructorTest(KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(KVPairArrayInitializorTestCases))]
-    public void KVPairArrayInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(KVPairArrayInitializerTestCases))]
+    public void KVPairArrayInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(ElementArraysConstructorTestCases))]
     public void ElementArraysConstructorTest(string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(ElementArraysInitializorTestCases))]
-    public void ElementArraysInitializorTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(ElementArraysInitializerTestCases))]
+    public void ElementArraysInitializerTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(ValueArrayConstructorTestCases))]
     public void ValueArrayConstructorTest(System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(ValueArrayInitializorTestCases))]
-    public void ValueArrayInitializorTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(ValueArrayInitializerTestCases))]
+    public void ValueArrayInitializerTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
 }

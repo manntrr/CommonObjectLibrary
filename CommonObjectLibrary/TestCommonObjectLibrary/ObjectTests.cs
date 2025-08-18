@@ -12,11 +12,6 @@ public class ObjectTests : LibraryTestsInterface
     public void Setup()
     {
     }
-    [Test]
-    public void Test()
-    {
-        Assert.Pass();
-    }
     static readonly TestCaseData[] GetByKeyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetByKeyFunctionTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
     [TestCaseSource(nameof(GetByKeyTestCases))]
@@ -452,10 +447,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] NullInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] NullInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(NullInitializorTestCases))]
-    public void NullInitializorTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(NullInitializerTestCases))]
+    public void NullInitializerTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -470,10 +465,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] InterfaceCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(InterfaceCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] InterfaceCopyInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(InterfaceCopyInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(InterfaceCopyInitializorTestCases))]
-    public void InterfaceCopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(InterfaceCopyInitializerTestCases))]
+    public void InterfaceCopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -488,10 +483,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] CopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] CopyInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(CopyInitializorTestCases))]
-    public void CopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(CopyInitializerTestCases))]
+    public void CopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -506,10 +501,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] DictionaryInterfaceInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInterfaceInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] DictionaryInterfaceInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInterfaceInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(DictionaryInterfaceInitializorTestCases))]
-    public void DictionaryInterfaceInitializorTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(DictionaryInterfaceInitializerTestCases))]
+    public void DictionaryInterfaceInitializerTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -524,10 +519,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] DictionaryInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] DictionaryInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(DictionaryInitializorTestCases))]
-    public void DictionaryInitializorTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(DictionaryInitializerTestCases))]
+    public void DictionaryInitializerTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -542,10 +537,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] KVPairInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] KVPairInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(KVPairInitializorTestCases))]
-    public void KVPairInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(KVPairInitializerTestCases))]
+    public void KVPairInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -560,10 +555,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] KVPairArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] KVPairArrayInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairArrayInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(KVPairArrayInitializorTestCases))]
-    public void KVPairArrayInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(KVPairArrayInitializerTestCases))]
+    public void KVPairArrayInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -578,10 +573,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] ElementArraysInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ElementArraysInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] ElementArraysInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ElementArraysInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(ElementArraysInitializorTestCases))]
-    public void ElementArraysInitializorTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(ElementArraysInitializerTestCases))]
+    public void ElementArraysInitializerTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -596,10 +591,10 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         Assert.That(obj, Is.EqualTo(obj));
     }
-    static readonly TestCaseData[] ValueArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ValueArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+    static readonly TestCaseData[] ValueArrayInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ValueArrayInitializerTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
-    [TestCaseSource(nameof(ValueArrayInitializorTestCases))]
-    public void ValueArrayInitializorTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+    [TestCaseSource(nameof(ValueArrayInitializerTestCases))]
+    public void ValueArrayInitializerTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
     {
         Object obj = new();
         Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));

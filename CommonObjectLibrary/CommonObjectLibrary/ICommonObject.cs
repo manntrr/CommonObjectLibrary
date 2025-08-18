@@ -7,6 +7,8 @@ using ObjectInterface = ICommonObject;
 using TCDD = /*NUnit.Framework./**/TestCaseDataDictionary;
 using TCsDD = /*NUnit.Framework./**/TestCasesDataDictionary;
 using COLTs = TestCommonObjectLibrary.ILibraryTests;
+using InvalidArgumentException = NUnit.Framework.InvalidArgumentException;
+
 
 public interface ICommonObject : IDictionary<string, System.Object>
 {
@@ -136,38 +138,73 @@ public interface ICommonObject : IDictionary<string, System.Object>
     }
     public static void INIT(ObjectInterface newObject)
     {
+        var keyList = GET_KEYS(newObject);
+        foreach (string key in keyList)
+        {
+            REMOVE(newObject, key: key);
+        }
     }
     public static void INIT(ObjectInterface newObject, ObjectInterface originalObject)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        foreach (KeyValuePair<string, System.Object> pair in originalObject)
+        {
+            ADD(newObject, key: pair.Key, value: pair.Value);
+        }
     }
     public static void INIT(ObjectInterface newObject, Object originalObject)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        foreach (KeyValuePair<string, System.Object> pair in originalObject)
+        {
+            ADD(newObject, key: pair.Key, value: pair.Value);
+        }
     }
     public static void INIT(ObjectInterface newObject, IDictionary<string, System.Object> originalObject)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        foreach (KeyValuePair<string, System.Object> pair in originalObject)
+        {
+            ADD(newObject, key: pair.Key, value: pair.Value);
+        }
     }
     public static void INIT(ObjectInterface newObject, Dictionary<string, System.Object> originalObject)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        foreach (KeyValuePair<string, System.Object> pair in originalObject)
+        {
+            ADD(newObject, key: pair.Key, value: pair.Value);
+        }
     }
     public static void INIT(ObjectInterface newObject, KeyValuePair<string, System.Object> originalObject)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        ADD(newObject, key: originalObject.Key, value: originalObject.Value);
     }
     public static void INIT(ObjectInterface newObject, KeyValuePair<string, System.Object>[] objects)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        foreach (KeyValuePair<string, System.Object> pair in objects)
+        {
+            ADD(newObject, key: pair.Key, value: pair.Value);
+        }
     }
     public static void INIT(ObjectInterface newObject, string[] keys, System.Object[] objects)
     {
-        throw new NotImplementedException();
+        if (keys.Length != objects.Length) throw new InvalidArgumentException();
+        INIT(newObject);
+        for (int index = 0; index < keys.Length; index++)
+        {
+            ADD(newObject, key: keys[index], value: objects[index]);
+        }
     }
     public static void INIT(ObjectInterface newObject, System.Object[] objects)
     {
-        throw new NotImplementedException();
+        INIT(newObject);
+        for (int index = 0; index < objects.Length; index++)
+        {
+            ADD(newObject, key: objects[index].ToString() ?? "", value: objects[index]);
+        }
     }
     static readonly TCsDD TEST_CASE_DATA = new([
         // TODO:  complete test case data
@@ -535,10 +572,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] NullInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] NullInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(NullInitializorTestCases))]
-            public void NullInitializorTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(NullInitializerTestCases))]
+            public void NullInitializerTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -553,10 +590,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] InterfaceCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(InterfaceCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] InterfaceCopyInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(InterfaceCopyInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(InterfaceCopyInitializorTestCases))]
-            public void InterfaceCopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(InterfaceCopyInitializerTestCases))]
+            public void InterfaceCopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -571,10 +608,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] CopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] CopyInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(CopyInitializorTestCases))]
-            public void CopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(CopyInitializerTestCases))]
+            public void CopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -589,10 +626,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] DictionaryInterfaceInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInterfaceInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] DictionaryInterfaceInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInterfaceInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(DictionaryInterfaceInitializorTestCases))]
-            public void DictionaryInterfaceInitializorTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(DictionaryInterfaceInitializerTestCases))]
+            public void DictionaryInterfaceInitializerTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -607,10 +644,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] DictionaryInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] DictionaryInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(DictionaryInitializorTestCases))]
-            public void DictionaryInitializorTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(DictionaryInitializerTestCases))]
+            public void DictionaryInitializerTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -625,10 +662,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] KVPairInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] KVPairInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(KVPairInitializorTestCases))]
-            public void KVPairInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(KVPairInitializerTestCases))]
+            public void KVPairInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -643,10 +680,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] KVPairArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] KVPairArrayInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairArrayInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(KVPairArrayInitializorTestCases))]
-            public void KVPairArrayInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(KVPairArrayInitializerTestCases))]
+            public void KVPairArrayInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -661,10 +698,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] ElementArraysInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ElementArraysInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] ElementArraysInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ElementArraysInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(ElementArraysInitializorTestCases))]
-            public void ElementArraysInitializorTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(ElementArraysInitializerTestCases))]
+            public void ElementArraysInitializerTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -679,10 +716,10 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
                 Assert.That(obj, Is.EqualTo(obj));
             }
-            static readonly TestCaseData[] ValueArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ValueArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            static readonly TestCaseData[] ValueArrayInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ValueArrayInitializerTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
-            [TestCaseSource(nameof(ValueArrayInitializorTestCases))]
-            public void ValueArrayInitializorTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+            [TestCaseSource(nameof(ValueArrayInitializerTestCases))]
+            public void ValueArrayInitializerTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
             {
                 Object obj = new();
                 Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -826,74 +863,74 @@ public interface ICommonObject : IDictionary<string, System.Object>
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticNullInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticNullInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticNullInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticNullInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticNullInitializorTestCases))]
-        public void StaticNullInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticNullInitializerTestCases))]
+        public void StaticNullInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticInterfaceCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticInterfaceCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticInterfaceCopyInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticInterfaceCopyInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticInterfaceCopyInitializorTestCases))]
-        public void StaticInterfaceCopyInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticInterfaceCopyInitializerTestCases))]
+        public void StaticInterfaceCopyInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticCopyInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticCopyInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticCopyInitializorTestCases))]
-        public void StaticCopyInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticCopyInitializerTestCases))]
+        public void StaticCopyInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticDictionaryInterfaceInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticDictionaryInterfaceInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticDictionaryInterfaceInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticDictionaryInterfaceInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticDictionaryInterfaceInitializorTestCases))]
-        public void StaticDictionaryInterfaceInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticDictionaryInterfaceInitializerTestCases))]
+        public void StaticDictionaryInterfaceInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticDictionaryInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticDictionaryInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticDictionaryInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticDictionaryInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticDictionaryInitializorTestCases))]
-        public void StaticDictionaryInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticDictionaryInitializerTestCases))]
+        public void StaticDictionaryInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticKVPairInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticKVPairInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticKVPairInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticKVPairInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticKVPairInitializorTestCases))]
-        public void StaticKVPairInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticKVPairInitializerTestCases))]
+        public void StaticKVPairInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticKVPairArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticKVPairArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticKVPairArrayInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticKVPairArrayInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticKVPairArrayInitializorTestCases))]
-        public void StaticKVPairArrayInitializorTest(System.Object caseProvidedObjectInstance, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticKVPairArrayInitializerTestCases))]
+        public void StaticKVPairArrayInitializerTest(System.Object caseProvidedObjectInstance, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticElementArraysInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticElementArraysInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticElementArraysInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticElementArraysInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticElementArraysInitializorTestCases))]
-        public void StaticElementArraysInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticElementArraysInitializerTestCases))]
+        public void StaticElementArraysInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
         }
-        static readonly TestCaseData[] StaticValueArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticValueArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        static readonly TestCaseData[] StaticValueArrayInitializerTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticValueArrayInitializerTest), ObjectInterface.TEST_CASE_DATA);
         [Test]
-        [TestCaseSource(nameof(StaticValueArrayInitializorTestCases))]
-        public void StaticValueArrayInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+        [TestCaseSource(nameof(StaticValueArrayInitializerTestCases))]
+        public void StaticValueArrayInitializerTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
         {
             Object obj = new();
             Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
@@ -915,9 +952,9 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
                 )
         ]))/**//*,
-    new(nameof(GenreTests.NullInitializorTest), new(
+    new(nameof(GenreTests.NullInitializerTest), new(
         TestCaseDescriptions: [TCDD.EmptyString],
-        TestCaseCategories: [TCDD.InitializorString],
+        TestCaseCategories: [TCDD.InitializerString],
         TestCaseIds: [counter++.ToString()],
         TestCaseData: [
             new(
@@ -945,9 +982,9 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
                 )
         ])),
-    new(nameof(GenreTests.KeyInitializorTest), new(
+    new(nameof(GenreTests.KeyInitializerTest), new(
         TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
-        TestCaseCategories: [TCDD.InitializorString],
+        TestCaseCategories: [TCDD.InitializerString],
         TestCaseIds: [counter++.ToString(),counter++.ToString()],
         TestCaseData: [
             new(
@@ -981,9 +1018,9 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
                 )
         ])),
-    new(nameof(GenreTests.NameInitializorTest), new(
+    new(nameof(GenreTests.NameInitializerTest), new(
         TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
-        TestCaseCategories: [TCDD.InitializorString],
+        TestCaseCategories: [TCDD.InitializerString],
         TestCaseIds: [counter++.ToString(),counter++.ToString()],
         TestCaseData: [
             new(
@@ -1017,9 +1054,9 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
                 )
         ])),
-    new(nameof(GenreTests.KeyNameInitializorTest), new(
+    new(nameof(GenreTests.KeyNameInitializerTest), new(
         TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
-        TestCaseCategories: [TCDD.InitializorString],
+        TestCaseCategories: [TCDD.InitializerString],
         TestCaseIds: [counter++.ToString(),counter++.ToString()],
         TestCaseData: [
             new(
@@ -1053,9 +1090,9 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
                 )
         ])),
-    new(nameof(GenreTests.IndexInitializorTest), new(
+    new(nameof(GenreTests.IndexInitializerTest), new(
         TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
-        TestCaseCategories: [TCDD.InitializorString],
+        TestCaseCategories: [TCDD.InitializerString],
         TestCaseIds: [counter++.ToString(),counter++.ToString()],
         TestCaseData: [
             new(
@@ -1089,9 +1126,9 @@ public interface ICommonObject : IDictionary<string, System.Object>
                 new GameMasterKeySet(GameMasters: new(Count: 0), MasterGameMasters: ref gameMasters)
                 )
         ])),
-    new(nameof(GenreTests.CopyInitializorTest), new(
+    new(nameof(GenreTests.CopyInitializerTest), new(
         TestCaseDescriptions: [TCDD.EmptyString, TCDD.EmptyString],
-        TestCaseCategories: [TCDD.InitializorString],
+        TestCaseCategories: [TCDD.InitializerString],
         TestCaseIds: [counter++.ToString(),counter++.ToString()],
         TestCaseData: [
             new(

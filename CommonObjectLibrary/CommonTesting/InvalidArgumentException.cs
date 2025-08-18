@@ -1,7 +1,7 @@
 namespace NUnit.Framework;
 
 [Serializable]
-internal class InvalidArgumentException : Exception
+public class InvalidArgumentException : Exception
 {
     public InvalidArgumentException()
     {

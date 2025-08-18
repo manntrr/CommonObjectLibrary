@@ -21,15 +21,15 @@ public interface IObjectInterfaceTests
         StaticRemoveTestCases = [],
         StaticRemovePairTestCases = [],
         StaticTryGetValueTestCases = [],
-        StaticNullInitializorTestCases = [],
-        StaticInterfaceCopyInitializorTestCases = [],
-        StaticCopyInitializorTestCases = [],
-        StaticDictionaryInterfaceInitializorTestCases = [],
-        StaticDictionaryInitializorTestCases = [],
-        StaticKVPairInitializorTestCases = [],
-        StaticKVPairArrayInitializorTestCases = [],
-        StaticElementArraysInitializorTestCases = [],
-        StaticValueArrayInitializorTestCases = [];
+        StaticNullInitializerTestCases = [],
+        StaticInterfaceCopyInitializerTestCases = [],
+        StaticCopyInitializerTestCases = [],
+        StaticDictionaryInterfaceInitializerTestCases = [],
+        StaticDictionaryInitializerTestCases = [],
+        StaticKVPairInitializerTestCases = [],
+        StaticKVPairArrayInitializerTestCases = [],
+        StaticElementArraysInitializerTestCases = [],
+        StaticValueArrayInitializerTestCases = [];
     [SetUp]
     public void Setup();
     [Test]
@@ -84,30 +84,30 @@ public interface IObjectInterfaceTests
     [TestCaseSource(nameof(StaticTryGetValueTestCases))]
     public void StaticTryGetValueTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticNullInitializorTestCases))]
-    public void StaticNullInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticNullInitializerTestCases))]
+    public void StaticNullInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticInterfaceCopyInitializorTestCases))]
-    public void StaticInterfaceCopyInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticInterfaceCopyInitializerTestCases))]
+    public void StaticInterfaceCopyInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticCopyInitializorTestCases))]
-    public void StaticCopyInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticCopyInitializerTestCases))]
+    public void StaticCopyInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticDictionaryInterfaceInitializorTestCases))]
-    public void StaticDictionaryInterfaceInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticDictionaryInterfaceInitializerTestCases))]
+    public void StaticDictionaryInterfaceInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticDictionaryInitializorTestCases))]
-    public void StaticDictionaryInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticDictionaryInitializerTestCases))]
+    public void StaticDictionaryInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticKVPairInitializorTestCases))]
-    public void StaticKVPairInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticKVPairInitializerTestCases))]
+    public void StaticKVPairInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticKVPairArrayInitializorTestCases))]
-    public void StaticKVPairArrayInitializorTest(Object caseProvidedObjectInstance, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticKVPairArrayInitializerTestCases))]
+    public void StaticKVPairArrayInitializerTest(Object caseProvidedObjectInstance, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticElementArraysInitializorTestCases))]
-    public void StaticElementArraysInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticElementArraysInitializerTestCases))]
+    public void StaticElementArraysInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
     [Test]
-    [TestCaseSource(nameof(StaticValueArrayInitializorTestCases))]
-    public void StaticValueArrayInitializorTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticValueArrayInitializerTestCases))]
+    public void StaticValueArrayInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
 }
