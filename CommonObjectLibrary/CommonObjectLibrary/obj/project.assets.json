@@ -828,23 +828,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\p40007y\\.nuget\\packages\\": {},
+    "C:\\Users\\admin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
       "projectName": "CommonObjectLibrary",
-      "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
-      "packagesPath": "C:\\Users\\p40007y\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\obj\\",
+      "projectPath": "C:\\Users\\admin\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\p40007y\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -859,8 +859,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
-              "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
+            "C:\\Users\\admin\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
+              "projectPath": "C:\\Users\\admin\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
             }
           }
         }
@@ -918,7 +918,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
