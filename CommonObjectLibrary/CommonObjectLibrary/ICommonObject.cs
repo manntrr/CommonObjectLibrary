@@ -53,14 +53,18 @@ public interface ICommonObject : IDictionary<string, System.Object>
     public void Init(string[] keys, System.Object[] objects);
     public void Init(System.Object[] objects);
 
-    public static System.Object GET_BY_KEY(ObjectInterface _object, string key)
-    {
-        return _object[key];
-    }
-    public static void SET_BY_KEY(ObjectInterface _object, string key, System.Object value)
-    {
-        _object[key] = value;
-    }
+    /*
+        public static System.Object GET_BY_KEY(ObjectInterface _object, string key)
+        {
+            return _object[key];
+        }
+    /**/
+    /*
+        public static void SET_BY_KEY(ObjectInterface _object, string key, System.Object value)
+        {
+            _object[key] = value;
+        }
+    /**/
     public static ICollection<string> GET_KEYS(ObjectInterface _object)
     {
         return _object.BaseKeys;

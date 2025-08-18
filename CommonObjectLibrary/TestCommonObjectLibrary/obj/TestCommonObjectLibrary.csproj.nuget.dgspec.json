@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj": {}
+    "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj": {}
   },
   "projects": {
-    "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj": {
+    "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
         "projectName": "CommonObjectLibrary",
-        "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
+        "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj",
         "packagesPath": "C:\\Users\\p40007y\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\obj\\",
+        "outputPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
-                "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
+              "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
+                "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
               }
             }
           }
@@ -95,14 +95,14 @@
         }
       }
     },
-    "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
+    "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj",
+        "projectUniqueName": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj",
         "projectName": "CommonTesting",
-        "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj",
+        "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj",
         "packagesPath": "C:\\Users\\p40007y\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\obj\\",
+        "outputPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -182,14 +182,14 @@
         }
       }
     },
-    "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj": {
+    "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj",
         "projectName": "TestCommonObjectLibrary",
-        "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj",
+        "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\TestCommonObjectLibrary.csproj",
         "packagesPath": "C:\\Users\\p40007y\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\obj\\",
+        "outputPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\TestCommonObjectLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -210,11 +210,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj": {
-                "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj"
+              "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj": {
+                "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary\\CommonObjectLibrary.csproj"
               },
-              "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
-                "projectPath": "c:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
+              "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj": {
+                "projectPath": "C:\\Users\\p40007y\\OneDrive - BYU-Idaho\\Documents\\Projects\\Common\\CommonObjectLibrary\\CommonObjectLibrary\\CommonTesting\\CommonTesting.csproj"
               }
             }
           }

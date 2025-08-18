@@ -60,8 +60,10 @@ public class CommonObject : Dictionary<string, System.Object>, ObjectInterface
     bool IDictionary<string, System.Object>.Remove(string key) => this.Remove(key);
     bool ICollection<KeyValuePair<string, System.Object>>.Remove(KeyValuePair<string, System.Object> item) => this.Remove(item);
     bool IDictionary<string, System.Object>.TryGetValue(string key, out System.Object value) => this.TryGetValue(key, out value);
-    public System.Object GetByKey(string key) => ObjectInterface.GET_BY_KEY(this, key);
-    public void SetByKey(string key, System.Object value) => ObjectInterface.SET_BY_KEY(this, key, value);
+    //public System.Object GetByKey(string key) => ObjectInterface.GET_BY_KEY(this, key);
+    public System.Object GetByKey(string key) => base[key];
+    //public void SetByKey(string key, System.Object value) => ObjectInterface.SET_BY_KEY(this, key, value);
+    public void SetByKey(string key, System.Object value) => base[key] = value;
     public ICollection<string> GetKeys() => ObjectInterface.GET_KEYS(this);
     public ICollection<System.Object> GetValues() => ObjectInterface.GET_VALUES(this);
     public int GetCount() => ObjectInterface.GET_COUNT(this);
