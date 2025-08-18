@@ -175,12 +175,731 @@ public interface ICommonObject : IDictionary<string, System.Object>
         TestCaseDescriptions: [TCDD.EmptyString],
         TestCaseCategories: [TCDD.ConstructorString],
         TestCaseIds: [counter++.ToString()],
+        //        public void GetByKeyOperationTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue)
+        //        public void GetByKeyFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue)
         TestCaseData: [
             new(
                 //System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue
-                new CommonObject(), "test", "test"
+                new CommonObject(new KeyValuePair<string, System.Object>[] { new("test", "test") }), "test", "test"
                 )
-        ]))/**//*,
+        ])),
+        new(nameof(COLTs.SetByKeyFunctionTest), new(
+        TestCaseDescriptions: [TCDD.EmptyString],
+        TestCaseCategories: [TCDD.ConstructorString],
+        TestCaseIds: [counter++.ToString()],
+        //        public void SetByKeyOperationTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, System.Object caseExpectedValue)
+        //        public void SetByKeyFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, System.Object caseExpectedValue)
+        TestCaseData: [
+            new(
+                //System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, System.Object caseExpectedValue
+                new CommonObject(), "test", "test", "test"
+                )
+        ])),
+        new(nameof(COLTs.GetKeysFunctionTest), new(
+        TestCaseDescriptions: [TCDD.EmptyString],
+        TestCaseCategories: [TCDD.ConstructorString],
+        TestCaseIds: [counter++.ToString()],
+        //        public void GetKeysPropertyTest(System.Object caseProvidedObject, ICollection<string> caseExpectedKeys)
+        //        public void GetKeysFunctionTest(System.Object caseProvidedObject, ICollection<string> caseExpectedKeys)
+        TestCaseData: [
+            new(
+                //System.Object caseProvidedObject, ICollection<string> caseExpectedKeys
+                new CommonObject(), new[] {"test"}
+                )
+        ]))/**/
+        /*
+            static readonly TestCaseData[] GetValuesTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetValuesFunctionTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(GetValuesTestCases))]
+            public void GetValuesPropertyTest(System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
+            {
+                Object? obj = null;
+                ICollection<System.Object>? values = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => values = obj.Values);
+                Assert.That(values, Is.Not.Null);
+                Assert.That(values, Is.InstanceOf<ICollection<System.Object>>());
+                Assert.That(values.Count, Is.EqualTo(caseExpectedValues.Count));
+                Assert.That(caseExpectedValues, Is.SubsetOf(values));
+                Assert.That(values, Is.SubsetOf(caseExpectedValues));
+                //TODO: remove the following if the above tests correctly
+                foreach (string value in caseExpectedValues)
+                {
+                    Assert.That(value, Is.SubsetOf(values));
+                }
+                foreach (string value in values)
+                {
+                    Assert.That(value, Is.SubsetOf(caseExpectedValues));
+                }
+            }
+            [Test]
+            [TestCaseSource(nameof(GetValuesTestCases))]
+            public void GetValuesFunctionTest(System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
+            {
+                Object? obj = null;
+                ICollection<System.Object>? values = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => values = obj.GetValues());
+                Assert.That(values, Is.Not.Null);
+                Assert.That(values, Is.InstanceOf<ICollection<System.Object>>());
+                Assert.That(values.Count, Is.EqualTo(caseExpectedValues.Count));
+                Assert.That(caseExpectedValues, Is.SubsetOf(values));
+                Assert.That(values, Is.SubsetOf(caseExpectedValues));
+                //TODO: remove the following if the above tests correctly
+                foreach (string value in caseExpectedValues)
+                {
+                    Assert.That(value, Is.SubsetOf(values));
+                }
+                foreach (string value in values)
+                {
+                    Assert.That(value, Is.SubsetOf(caseExpectedValues));
+                }
+            }
+            static readonly TestCaseData[] GetCountTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetCountFunctionTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(GetCountTestCases))]
+            public void GetCountPropertyTest(System.Object caseProvidedObject, int caseExpectedCount)
+            {
+                Object? obj = null;
+                int? count = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => count = obj.Count);
+                Assert.That(count, Is.Not.Null);
+                Assert.That(count, Is.InstanceOf<int>());
+                Assert.That(count, Is.EqualTo(caseExpectedCount));
+                Assert.DoesNotThrow(() => count = obj.Keys.Count);
+                Assert.That(count, Is.Not.Null);
+                Assert.That(count, Is.InstanceOf<int>());
+                Assert.That(count, Is.EqualTo(caseExpectedCount));
+            }
+            [Test]
+            [TestCaseSource(nameof(GetCountTestCases))]
+            public void GetCountFunctionTest(System.Object caseProvidedObject, int caseExpectedCount)
+            {
+                Object? obj = null;
+                int? count = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => count = obj.GetCount());
+                Assert.That(count, Is.Not.Null);
+                Assert.That(count, Is.InstanceOf<int>());
+                Assert.That(count, Is.EqualTo(caseExpectedCount));
+                Assert.DoesNotThrow(() => count = obj.Keys.Count);
+                Assert.That(count, Is.Not.Null);
+                Assert.That(count, Is.InstanceOf<int>());
+                Assert.That(count, Is.EqualTo(caseExpectedCount));
+            }
+            static readonly TestCaseData[] GetIsReadOnlyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetIsReadOnlyFunctionTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(GetIsReadOnlyTestCases))]
+            public void GetIsReadOnlyPropertyTest(System.Object caseProvidedObject, bool caseExpectedIsReadOnly)
+            {
+                Object? obj = null;
+                bool? isReadOnly = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => isReadOnly = obj.isReadOnly);
+                Assert.That(isReadOnly, Is.Not.Null);
+                Assert.That(isReadOnly, Is.InstanceOf<bool>());
+                Assert.That(isReadOnly, Is.EqualTo(caseExpectedIsReadOnly));
+            }
+            [Test]
+            [TestCaseSource(nameof(GetIsReadOnlyTestCases))]
+            public void GetIsReadOnlyFunctionTest(System.Object caseProvidedObject, bool caseExpectedIsReadOnly)
+            {
+                Object? obj = null;
+                bool? isReadOnly = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => isReadOnly = obj.GetIsReadOnly());
+                Assert.That(isReadOnly, Is.Not.Null);
+                Assert.That(isReadOnly, Is.InstanceOf<bool>());
+                Assert.That(isReadOnly, Is.EqualTo(caseExpectedIsReadOnly));
+            }
+            static readonly TestCaseData[] AddElementsTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(AddElementsTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(AddElementsTestCases))]
+            public void AddElementsTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, string caseExpectedKey, System.Object caseExpectedValue)
+            {
+                Object? obj = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.Add(caseProvidedKey, caseProvidedValue));
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(obj.ContainsKey(caseExpectedKey), Is.True);
+                Assert.That(obj[caseExpectedKey], Is.EqualTo(caseExpectedValue));
+            }
+            static readonly TestCaseData[] AddPairTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(AddPairTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(AddPairTestCases))]
+            public void AddPairTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, string caseExpectedKey, System.Object caseExpectedValue)
+            {
+                Object? obj = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.Add(caseProvidedPair));
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(obj.ContainsKey(caseExpectedKey), Is.True);
+                Assert.That(obj[caseExpectedKey], Is.EqualTo(caseExpectedValue));
+            }
+            static readonly TestCaseData[] ClearTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ClearTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ClearTestCases))]
+            public void ClearTest(System.Object caseProvidedObject)
+            {
+                Object? obj = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.Clear());
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(obj.Count, Is.EqualTo(0));
+                Assert.That(obj.Keys.Count, Is.EqualTo(0));
+                Assert.That(obj.Values.Count, Is.EqualTo(0));
+            }
+            static readonly TestCaseData[] ContainsTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ContainsTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ContainsTestCases))]
+            public void ContainsTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseRequestedValue, bool caseExpectedResult)
+            {
+                Object? obj = null;
+                bool? result = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => result = obj.Contains(caseRequestedValue));
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result, Is.InstanceOf<bool>());
+                Assert.That(result, Is.EqualTo(caseExpectedResult));
+            }
+            static readonly TestCaseData[] ContainsKeyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ContainsKeyTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ContainsKeyTestCases))]
+            public void ContainsKeyTest(System.Object caseProvidedObject, string caseRequestedKey, bool caseExpectedResult)
+            {
+                Object? obj = null;
+                bool? result = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => result = obj.ContainsKey(caseRequestedKey));
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result, Is.InstanceOf<bool>());
+                Assert.That(result, Is.EqualTo(caseExpectedResult));
+            }
+            static readonly TestCaseData[] CopyToTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyToTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(CopyToTestCases))]
+            public void CopyToTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object>[] caseProvidedArray, int caseProvidedArrayIndex, System.Object caseExpectedObject)
+            {
+                Object? obj = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.CopyTo(caseProvidedArray, caseProvidedArrayIndex));
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(obj, Is.EqualTo(caseExpectedObject));
+            }
+            static readonly TestCaseData[] PairEnumeratorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(PairEnumeratorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(PairEnumeratorTestCases))]
+            public void PairEnumeratorTest(System.Object caseProvidedObject, IEnumerator<KeyValuePair<string, System.Object>> caseExpectedEnumerator)
+            {
+                Object? obj = null;
+                IEnumerator<KeyValuePair<string, System.Object>>? result = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => result = obj.GetPairEnumerator());
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result, Is.InstanceOf<IEnumerator<KeyValuePair<string, System.Object>>>());
+                Assert.That(result.ToString(), Is.EqualTo(caseExpectedEnumerator.ToString()));
+            }
+            static readonly TestCaseData[] EnumeratorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(EnumeratorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(EnumeratorTestCases))]
+            public void EnumeratorTest(System.Object caseProvidedObject, IEnumerator caseExpectedEnumerator)
+            {
+                Object? obj = null;
+                IEnumerator<KeyValuePair<string, System.Object>>? result = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => result = obj.GetPairEnumerator());
+                Assert.That(result, Is.Not.Null);
+                Assert.That(result, Is.InstanceOf<IEnumerator>());
+                Assert.That(result.ToString(), Is.EqualTo(caseExpectedEnumerator.ToString()));
+            }
+            static readonly TestCaseData[] RemoveTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(RemoveTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(RemoveTestCases))]
+            public void RemoveTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedObject)
+            {
+                Object? obj = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.Remove(caseProvidedKey));
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(obj.ContainsKey(caseProvidedKey), Is.False);
+                Assert.That(obj, Is.EqualTo(caseProvidedObject));
+            }
+            static readonly TestCaseData[] RemovePairTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(RemovePairTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(RemovePairTestCases))]
+            public void RemovePairTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, System.Object caseExpectedObject)
+            {
+                Object? obj = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.Remove(caseProvidedPair));
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(obj.ContainsKey(caseProvidedPair.Key), Is.False);
+                Assert.That(obj, Is.EqualTo(caseProvidedObject));
+            }
+            static readonly TestCaseData[] TryGetValueTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(TryGetValueTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(TryGetValueTestCases))]
+            public void TryGetValueTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue)
+            {
+                Object? obj = null;
+                System.Object? caseResultValue = null;
+                Assert.That(caseProvidedObject, Is.Not.Null);
+                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.DoesNotThrow(() => obj.TryGetValue(caseProvidedKey, out caseResultValue));
+                Assert.That(obj, Is.Not.Null);
+                Assert.That(obj, Is.InstanceOf<Object>());
+                Assert.That(caseResultValue, Is.Not.Null);
+                Assert.That(caseResultValue, Is.InstanceOf<System.Object>());
+                Assert.That(caseResultValue, Is.EqualTo(caseExpectedValue));
+            }
+            static readonly TestCaseData[] NullConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(NullConstructorTestCases))]
+            public void NullConstructorTest(System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] NullInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(NullInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(NullInitializorTestCases))]
+            public void NullInitializorTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] InterfaceCopyConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(InterfaceCopyConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(InterfaceCopyConstructorTestCases))]
+            public void InterfaceCopyConstructorTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] InterfaceCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(InterfaceCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(InterfaceCopyInitializorTestCases))]
+            public void InterfaceCopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] CopyConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(CopyConstructorTestCases))]
+            public void CopyConstructorTest(System.Object caseProvidedObject, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] CopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(CopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(CopyInitializorTestCases))]
+            public void CopyInitializorTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] DictionaryInterfaceConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInterfaceConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(DictionaryInterfaceConstructorTestCases))]
+            public void DictionaryInterfaceConstructorTest(IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] DictionaryInterfaceInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInterfaceInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(DictionaryInterfaceInitializorTestCases))]
+            public void DictionaryInterfaceInitializorTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] DictionaryConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(DictionaryConstructorTestCases))]
+            public void DictionaryConstructorTest(Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] DictionaryInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(DictionaryInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(DictionaryInitializorTestCases))]
+            public void DictionaryInitializorTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] KVPairConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(KVPairConstructorTestCases))]
+            public void KVPairConstructorTest(KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] KVPairInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(KVPairInitializorTestCases))]
+            public void KVPairInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] KVPairArrayConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairArrayConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(KVPairArrayConstructorTestCases))]
+            public void KVPairArrayConstructorTest(KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] KVPairArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(KVPairArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(KVPairArrayInitializorTestCases))]
+            public void KVPairArrayInitializorTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] ElementArraysConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ElementArraysConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ElementArraysConstructorTestCases))]
+            public void ElementArraysConstructorTest(string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] ElementArraysInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ElementArraysInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ElementArraysInitializorTestCases))]
+            public void ElementArraysInitializorTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] ValueArrayConstructorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ValueArrayConstructorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ValueArrayConstructorTestCases))]
+            public void ValueArrayConstructorTest(System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+            static readonly TestCaseData[] ValueArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(ValueArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+            [Test]
+            [TestCaseSource(nameof(ValueArrayInitializorTestCases))]
+            public void ValueArrayInitializorTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+            {
+                Object obj = new();
+                Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+                Assert.That(obj, Is.EqualTo(obj));
+            }
+        /**/
+        /*
+        static readonly TestCaseData[] StaticGetByKeyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticGetByKeyTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticGetByKeyTestCases))]
+        public void StaticGetByKeyTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticSetByKeyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticSetByKeyTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticSetByKeyTestCases))]
+        public void StaticSetByKeyTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticGetKeysTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticGetKeysTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticGetKeysTestCases))]
+        public void StaticGetKeysTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, ICollection<string> caseExpectedKeys)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticGetValuesTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticGetValuesTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticGetValuesTestCases))]
+        public void StaticGetValuesTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticGetCountTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticGetCountTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticGetCountTestCases))]
+        public void StaticGetCountTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, int caseExpectedCount)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticGetIsReadOnlyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticGetIsReadOnlyTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticGetIsReadOnlyTestCases))]
+        public void StaticGetIsReadOnlyTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, bool caseExpectedIsReadOnly)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticAddElementsTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticAddElementsTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticAddElementsTestCases))]
+        public void StaticAddElementsTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, string caseExpectedKey, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticAddPairTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticAddPairTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticAddPairTestCases))]
+        public void StaticAddPairTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, string caseExpectedKey, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticClearTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticClearTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticClearTestCases))]
+        public void StaticClearTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticContainsTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticContainsTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticContainsTestCases))]
+        public void StaticContainsTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseRequestedValue, bool caseExpectedResult)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticContainsKeyTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticContainsKeyTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticContainsKeyTestCases))]
+        public void StaticContainsKeyTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseRequestedKey, bool caseExpectedResult)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticCopyToTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticCopyToTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticCopyToTestCases))]
+        public void StaticCopyToTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object>[] caseProvidedArray, int caseProvidedArrayIndex, System.Object caseExpectedObject)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticPairEnumeratorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticPairEnumeratorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticPairEnumeratorTestCases))]
+        public void StaticPairEnumeratorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, IEnumerator<KeyValuePair<string, System.Object>> caseExpectedEnumerator)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticEnumeratorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticEnumeratorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticEnumeratorTestCases))]
+        public void StaticEnumeratorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, IEnumerator caseExpectedEnumerator)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticRemoveTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticRemoveTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticRemoveTestCases))]
+        public void StaticRemoveTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedObject)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticRemovePairTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticRemovePairTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticRemovePairTestCases))]
+        public void StaticRemovePairTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, System.Object caseExpectedObject)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticTryGetValueTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticTryGetValueTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticTryGetValueTestCases))]
+        public void StaticTryGetValueTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticNullInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticNullInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticNullInitializorTestCases))]
+        public void StaticNullInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedObject, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticInterfaceCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticInterfaceCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticInterfaceCopyInitializorTestCases))]
+        public void StaticInterfaceCopyInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticCopyInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticCopyInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticCopyInitializorTestCases))]
+        public void StaticCopyInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticDictionaryInterfaceInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticDictionaryInterfaceInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticDictionaryInterfaceInitializorTestCases))]
+        public void StaticDictionaryInterfaceInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticDictionaryInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticDictionaryInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticDictionaryInitializorTestCases))]
+        public void StaticDictionaryInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticKVPairInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticKVPairInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticKVPairInitializorTestCases))]
+        public void StaticKVPairInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticKVPairArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticKVPairArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticKVPairArrayInitializorTestCases))]
+        public void StaticKVPairArrayInitializorTest(System.Object caseProvidedObjectInstance, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticElementArraysInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticElementArraysInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticElementArraysInitializorTestCases))]
+        public void StaticElementArraysInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        static readonly TestCaseData[] StaticValueArrayInitializorTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(StaticValueArrayInitializorTest), ObjectInterface.TEST_CASE_DATA);
+        [Test]
+        [TestCaseSource(nameof(StaticValueArrayInitializorTestCases))]
+        public void StaticValueArrayInitializorTest(System.Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue)
+        {
+            Object obj = new();
+            Assert.That((ObjectInterface)obj, Is.EqualTo((ObjectInterface)obj));
+        }
+        /**/
+        /*,
         /*new(nameof(COLTs.NullConstructorTest), new(
         TestCaseDescriptions: [TCDD.EmptyString],
         TestCaseCategories: [TCDD.ConstructorString],
