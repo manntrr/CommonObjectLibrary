@@ -83,15 +83,14 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That(caseExpectedKeys, Is.SubsetOf(keys));
         Assert.That(keys, Is.SubsetOf(caseExpectedKeys));
         //TODO: remove the following if the above tests correctly
-        foreach (string key in caseExpectedKeys)
-        {
-            Assert.That(key, Is.SubsetOf(keys));
-        }
-        foreach (string key in keys)
-        {
-            Assert.That(key, Is.SubsetOf(caseExpectedKeys));
-        }
-
+        //foreach (string key in caseExpectedKeys)
+        //{
+        //    Assert.That(key, Is.SubsetOf(keys));
+        //}
+        //foreach (string key in keys)
+        //{
+        //    Assert.That(key, Is.SubsetOf(caseExpectedKeys));
+        //}
     }
     [Test]
     [TestCaseSource(nameof(GetKeysTestCases))]
@@ -111,14 +110,14 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That(caseExpectedKeys, Is.SubsetOf(keys));
         Assert.That(keys, Is.SubsetOf(caseExpectedKeys));
         //TODO: remove the following if the above tests correctly
-        foreach (string key in caseExpectedKeys)
-        {
-            Assert.That(key, Is.SubsetOf(keys));
-        }
-        foreach (string key in keys)
-        {
-            Assert.That(key, Is.SubsetOf(caseExpectedKeys));
-        }
+        //foreach (string key in caseExpectedKeys)
+        //{
+        //    Assert.That(key, Is.SubsetOf(keys));
+        //}
+        //foreach (string key in keys)
+        //{
+        //    Assert.That(key, Is.SubsetOf(caseExpectedKeys));
+        //}
     }
     static readonly TestCaseData[] GetValuesTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetValuesFunctionTest), ObjectInterface.TEST_CASE_DATA);
     [Test]
@@ -139,14 +138,14 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That(caseExpectedValues, Is.SubsetOf(values));
         Assert.That(values, Is.SubsetOf(caseExpectedValues));
         //TODO: remove the following if the above tests correctly
-        foreach (string value in caseExpectedValues)
-        {
-            Assert.That(value, Is.SubsetOf(values));
-        }
-        foreach (string value in values)
-        {
-            Assert.That(value, Is.SubsetOf(caseExpectedValues));
-        }
+        //foreach (string value in caseExpectedValues)
+        //{
+        //    Assert.That(value, Is.SubsetOf(values));
+        //}
+        //foreach (string value in values)
+        //{
+        //    Assert.That(value, Is.SubsetOf(caseExpectedValues));
+        //}
     }
     [Test]
     [TestCaseSource(nameof(GetValuesTestCases))]
@@ -166,14 +165,14 @@ public class ObjectTests : LibraryTestsInterface
         Assert.That(caseExpectedValues, Is.SubsetOf(values));
         Assert.That(values, Is.SubsetOf(caseExpectedValues));
         //TODO: remove the following if the above tests correctly
-        foreach (string value in caseExpectedValues)
-        {
-            Assert.That(value, Is.SubsetOf(values));
-        }
-        foreach (string value in values)
-        {
-            Assert.That(value, Is.SubsetOf(caseExpectedValues));
-        }
+        //foreach (string value in caseExpectedValues)
+        //{
+        //    Assert.That(value, Is.SubsetOf(values));
+        //}
+        //foreach (string value in values)
+        //{
+        //    Assert.That(value, Is.SubsetOf(caseExpectedValues));
+        //}
     }
     static readonly TestCaseData[] GetCountTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetCountFunctionTest), ObjectInterface.TEST_CASE_DATA);
     [Test]

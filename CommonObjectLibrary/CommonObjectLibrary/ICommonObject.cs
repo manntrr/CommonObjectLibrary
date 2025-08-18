@@ -241,65 +241,22 @@ public interface ICommonObject : IDictionary<string, System.Object>
         TestCaseData: [
             new(
                 //System.Object caseProvidedObject, ICollection<string> caseExpectedKeys
-                new CommonObject(), new[] {"test"}
+                new CommonObject(new KeyValuePair<string, System.Object>[] { new("test", "test") }), new[] {"test"}
+                )
+        ])),
+        new(nameof(COLTs.GetValuesFunctionTest), new(
+        TestCaseDescriptions: [TCDD.EmptyString],
+        TestCaseCategories: [TCDD.ConstructorString],
+        TestCaseIds: [counter++.ToString()],
+        //        public void GetValuesPropertyTest(System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
+        //        public void GetValuesFunctionTest(System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
+        TestCaseData: [
+            new(
+                //System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues
+                new CommonObject(new KeyValuePair<string, System.Object>[] { new("test", "test") }), new[] {"test"}
                 )
         ]))/**/
         /*
-            static readonly TestCaseData[] GetValuesTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetValuesFunctionTest), ObjectInterface.TEST_CASE_DATA);
-            [Test]
-            [TestCaseSource(nameof(GetValuesTestCases))]
-            public void GetValuesPropertyTest(System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
-            {
-                Object? obj = null;
-                ICollection<System.Object>? values = null;
-                Assert.That(caseProvidedObject, Is.Not.Null);
-                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
-                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
-                Assert.That(obj, Is.Not.Null);
-                Assert.That(obj, Is.InstanceOf<Object>());
-                Assert.DoesNotThrow(() => values = obj.Values);
-                Assert.That(values, Is.Not.Null);
-                Assert.That(values, Is.InstanceOf<ICollection<System.Object>>());
-                Assert.That(values.Count, Is.EqualTo(caseExpectedValues.Count));
-                Assert.That(caseExpectedValues, Is.SubsetOf(values));
-                Assert.That(values, Is.SubsetOf(caseExpectedValues));
-                //TODO: remove the following if the above tests correctly
-                foreach (string value in caseExpectedValues)
-                {
-                    Assert.That(value, Is.SubsetOf(values));
-                }
-                foreach (string value in values)
-                {
-                    Assert.That(value, Is.SubsetOf(caseExpectedValues));
-                }
-            }
-            [Test]
-            [TestCaseSource(nameof(GetValuesTestCases))]
-            public void GetValuesFunctionTest(System.Object caseProvidedObject, ICollection<System.Object> caseExpectedValues)
-            {
-                Object? obj = null;
-                ICollection<System.Object>? values = null;
-                Assert.That(caseProvidedObject, Is.Not.Null);
-                Assert.That(caseProvidedObject, Is.InstanceOf<Object>());
-                Assert.DoesNotThrow(() => obj = (Object)caseProvidedObject);
-                Assert.That(obj, Is.Not.Null);
-                Assert.That(obj, Is.InstanceOf<Object>());
-                Assert.DoesNotThrow(() => values = obj.GetValues());
-                Assert.That(values, Is.Not.Null);
-                Assert.That(values, Is.InstanceOf<ICollection<System.Object>>());
-                Assert.That(values.Count, Is.EqualTo(caseExpectedValues.Count));
-                Assert.That(caseExpectedValues, Is.SubsetOf(values));
-                Assert.That(values, Is.SubsetOf(caseExpectedValues));
-                //TODO: remove the following if the above tests correctly
-                foreach (string value in caseExpectedValues)
-                {
-                    Assert.That(value, Is.SubsetOf(values));
-                }
-                foreach (string value in values)
-                {
-                    Assert.That(value, Is.SubsetOf(caseExpectedValues));
-                }
-            }
             static readonly TestCaseData[] GetCountTestCases = TestCasesDataDictionary.TestCaseDataArray(nameof(GetCountFunctionTest), ObjectInterface.TEST_CASE_DATA);
             [Test]
             [TestCaseSource(nameof(GetCountTestCases))]
