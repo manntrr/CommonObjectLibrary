@@ -23,14 +23,15 @@ public class ObjectInterfaceEqualToConstraint : Constraint
             Assert.That(obj, Is.Not.Null);
             Assert.That(obj, Is.InstanceOf<ObjectInterface>());
             Assert.That(Expected.Count, Is.EqualTo(obj.Count));
-            isMatch = false; //TODO: complete the test for equality of the instance
-            /*
-            Assert.That(commonObject, Is.GenresCountEqual(_expectedValue.Count));
-            foreach (KeyValuePair<string, Genre> _genre in _expectedValue)
+            foreach (string key in Expected.GetKeys())
             {
-                Assert.That(commonObject, Is.GenresContainGenre(_context, _genre.Value));
+                Assert.That(obj.ContainsKey(key), Is.True);
             }
-            /**/
+            foreach (string key in obj.GetKeys())
+            {
+                Assert.That(Expected.ContainsKey(key), Is.True);
+                Assert.That(Expected[key], Is.EqualTo(obj[key]));
+            }
         }
         catch (Exception)
         {

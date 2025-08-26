@@ -79,37 +79,37 @@ public interface IObjectTests
     public void GetIsReadOnlyFunctionTest(System.Object caseProvidedObject, bool caseExpectedIsReadOnly);
     [Test]
     [TestCaseSource(nameof(AddElementsTestCases))]
-    public void AddElementsTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, string caseExpectedKey, System.Object caseExpectedValue);
+    public void AddElementsFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, string caseExpectedKey, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(AddPairTestCases))]
-    public void AddPairTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, string caseExpectedKey, System.Object caseExpectedValue);
+    public void AddPairFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, string caseExpectedKey, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(ClearTestCases))]
-    public void ClearTest(System.Object caseProvidedObject);
+    public void ClearFunctionTest(System.Object caseProvidedObject);
     [Test]
     [TestCaseSource(nameof(ContainsTestCases))]
-    public void ContainsTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseRequestedValue, bool caseExpectedResult);
+    public void ContainsFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseRequestedValue, bool caseExpectedResult);
     [Test]
     [TestCaseSource(nameof(ContainsKeyTestCases))]
-    public void ContainsKeyTest(System.Object caseProvidedObject, string caseRequestedKey, bool caseExpectedResult);
+    public void ContainsKeyFunctionTest(System.Object caseProvidedObject, string caseRequestedKey, bool caseExpectedResult);
     [Test]
     [TestCaseSource(nameof(CopyToTestCases))]
-    public void CopyToTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object>[] caseProvidedArray, int caseProvidedArrayIndex, System.Object caseExpectedObject);
+    public void CopyToFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object>[] caseProvidedArray, int caseProvidedArrayIndex, KeyValuePair<string, System.Object>[] caseExpectedArray);
     [Test]
     [TestCaseSource(nameof(PairEnumeratorTestCases))]
-    public void PairEnumeratorTest(System.Object caseProvidedObject, IEnumerator<KeyValuePair<string, System.Object>> caseExpectedEnumerator);
+    public void PairEnumeratorFunctionTest(System.Object caseProvidedObject, IEnumerator<KeyValuePair<string, System.Object>> caseExpectedEnumerator);
     [Test]
     [TestCaseSource(nameof(EnumeratorTestCases))]
-    public void EnumeratorTest(System.Object caseProvidedObject, IEnumerator caseExpectedEnumerator);
+    public void EnumeratorFunctionTest(System.Object caseProvidedObject, IEnumerator caseExpectedEnumerator);
     [Test]
     [TestCaseSource(nameof(RemoveTestCases))]
-    public void RemoveTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedObject);
+    public void RemoveFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedObject);
     [Test]
     [TestCaseSource(nameof(RemovePairTestCases))]
-    public void RemovePairTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, System.Object caseExpectedObject);
+    public void RemovePairFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, System.Object caseExpectedObject);
     [Test]
     [TestCaseSource(nameof(TryGetValueTestCases))]
-    public void TryGetValueTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue);
+    public void TryGetValueFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, bool caseExpectedResult, System.Object caseExpectedValue);
     [Test]
     [TestCaseSource(nameof(NullConstructorTestCases))]
     public void NullConstructorTest(System.Object caseExpectedValue);
