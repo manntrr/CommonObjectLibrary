@@ -4,23 +4,24 @@ namespace TestCommonObjectLibrary;
 
 public interface IObjectInterfaceTests
 {
-    static readonly TestCaseData[] StaticGetByKeyTestCases = [],
-        StaticSetByKeyTestCases = [],
-        StaticGetKeysTestCases = [],
-        StaticGetValuesTestCases = [],
-        StaticGetCountTestCases = [],
-        StaticGetIsReadOnlyTestCases = [],
-        StaticAddElementsTestCases = [],
-        StaticAddPairTestCases = [],
-        StaticClearTestCases = [],
-        StaticContainsTestCases = [],
-        StaticContainsKeyTestCases = [],
-        StaticCopyToTestCases = [],
-        StaticPairEnumeratorTestCases = [],
-        StaticEnumeratorTestCases = [],
-        StaticRemoveTestCases = [],
-        StaticRemovePairTestCases = [],
-        StaticTryGetValueTestCases = [],
+    static readonly TestCaseData[] StaticGetByKeyFunctionTestCases = [],
+        StaticSetByKeyFunctionTestCases = [],
+        StaticGetKeysFunctionTestCases = [],
+        StaticGetValuesFunctionTestCases = [],
+        StaticGetCountFunctionTestCases = [],
+        StaticGetIsReadOnlyFunctionTestCases = [],
+        StaticGetKeyCaseSensativeFunctionTestCases = [],
+        StaticAddElementsFunctionTestCases = [],
+        StaticAddPairFunctionTestCases = [],
+        StaticClearFunctionTestCases = [],
+        StaticContainsFunctionTestCases = [],
+        StaticContainsKeyFunctionTestCases = [],
+        StaticCopyToFunctionTestCases = [],
+        StaticPairEnumeratorFunctionTestCases = [],
+        StaticEnumeratorFunctionTestCases = [],
+        StaticRemoveFunctionTestCases = [],
+        StaticRemovePairFunctionTestCases = [],
+        StaticTryGetValueFunctionTestCases = [],
         StaticNullInitializerTestCases = [],
         StaticInterfaceCopyInitializerTestCases = [],
         StaticCopyInitializerTestCases = [],
@@ -33,81 +34,84 @@ public interface IObjectInterfaceTests
     [SetUp]
     public void Setup();
     [Test]
-    [TestCaseSource(nameof(StaticGetByKeyTestCases))]
-    public void StaticGetByKeyTest(Object caseProvidedObjectInstance, Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticGetByKeyFunctionTestCases))]
+    public void StaticGetByKeyFunctionTest(Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticSetByKeyTestCases))]
-    public void StaticSetByKeyTest(Object caseProvidedObjectInstance, Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticSetByKeyFunctionTestCases))]
+    public void StaticSetByKeyFunctionTest(Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticGetKeysTestCases))]
-    public void StaticGetKeysTest(Object caseProvidedObjectInstance, Object caseProvidedObject, ICollection<string> caseExpectedKeys);
+    [TestCaseSource(nameof(StaticGetKeysFunctionTestCases))]
+    public void StaticGetKeysFunctionTest(Object caseProvidedObject, ICollection<string> caseExpectedKeys, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticGetValuesTestCases))]
-    public void StaticGetValuesTest(Object caseProvidedObjectInstance, Object caseProvidedObject, ICollection<System.Object> caseExpectedValues);
+    [TestCaseSource(nameof(StaticGetValuesFunctionTestCases))]
+    public void StaticGetValuesFunctionTest(Object caseProvidedObject, ICollection<System.Object> caseExpectedValues, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticGetCountTestCases))]
-    public void StaticGetCountTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, int caseExpectedCount);
+    [TestCaseSource(nameof(StaticGetCountFunctionTestCases))]
+    public void StaticGetCountFunctionTest(System.Object caseProvidedObject, int caseExpectedCount, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticGetIsReadOnlyTestCases))]
-    public void StaticGetIsReadOnlyTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, bool caseExpectedIsReadOnly);
+    [TestCaseSource(nameof(StaticGetIsReadOnlyFunctionTestCases))]
+    public void StaticGetIsReadOnlyFunctionTest(System.Object caseProvidedObject, bool caseExpectedIsReadOnly, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticAddElementsTestCases))]
-    public void StaticAddElementsTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, string caseExpectedKey, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticGetKeyCaseSensativeFunctionTestCases))]
+    public void StaticGetKeyCaseSensativeFunctionTest(System.Object caseProvidedObject, bool caseExpectedKeyCaseSensative, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticAddPairTestCases))]
-    public void StaticAddPairTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, string caseExpectedKey, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticAddElementsFunctionTestCases))]
+    public void StaticAddElementsFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseProvidedValue, string caseExpectedKey, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticClearTestCases))]
-    public void StaticClearTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject);
+    [TestCaseSource(nameof(StaticAddPairFunctionTestCases))]
+    public void StaticAddPairFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, string caseExpectedKey, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticContainsTestCases))]
-    public void StaticContainsTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseRequestedValue, bool caseExpectedResult);
+    [TestCaseSource(nameof(StaticClearFunctionTestCases))]
+    public void StaticClearFunctionTest(System.Object caseProvidedObject, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticContainsKeyTestCases))]
-    public void StaticContainsKeyTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseRequestedKey, bool caseExpectedResult);
+    [TestCaseSource(nameof(StaticContainsFunctionTestCases))]
+    public void StaticContainsFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseRequestedValue, bool caseExpectedResult, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticCopyToTestCases))]
-    public void StaticCopyToTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object>[] caseProvidedArray, int caseProvidedArrayIndex, System.Object caseExpectedObject);
+    [TestCaseSource(nameof(StaticContainsKeyFunctionTestCases))]
+    public void StaticContainsKeyFunctionTest(System.Object caseProvidedObject, string caseRequestedKey, bool caseExpectedResult, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticPairEnumeratorTestCases))]
-    public void StaticPairEnumeratorTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, IEnumerator<KeyValuePair<string, System.Object>> caseExpectedEnumerator);
+    [TestCaseSource(nameof(StaticCopyToFunctionTestCases))]
+    public void StaticCopyToFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object>[] caseProvidedArray, int caseProvidedArrayIndex, KeyValuePair<string, System.Object>[] caseExpectedArray, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticEnumeratorTestCases))]
-    public void StaticEnumeratorTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, IEnumerator caseExpectedEnumerator);
+    [TestCaseSource(nameof(StaticPairEnumeratorFunctionTestCases))]
+    public void StaticPairEnumeratorFunctionTest(System.Object caseProvidedObject, IEnumerator<KeyValuePair<string, System.Object>> caseExpectedEnumerator, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticRemoveTestCases))]
-    public void StaticRemoveTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedObject);
+    [TestCaseSource(nameof(StaticEnumeratorFunctionTestCases))]
+    public void StaticEnumeratorFunctionTest(System.Object caseProvidedObject, IEnumerator caseExpectedEnumerator, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticRemovePairTestCases))]
-    public void StaticRemovePairTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, System.Object caseExpectedObject);
+    [TestCaseSource(nameof(StaticRemoveFunctionTestCases))]
+    public void StaticRemoveFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedObject, Exception caseExpectedException);
     [Test]
-    [TestCaseSource(nameof(StaticTryGetValueTestCases))]
-    public void StaticTryGetValueTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, string caseProvidedKey, System.Object caseExpectedValue);
+    [TestCaseSource(nameof(StaticRemovePairFunctionTestCases))]
+    public void StaticRemovePairFunctionTest(System.Object caseProvidedObject, KeyValuePair<string, System.Object> caseProvidedPair, System.Object caseExpectedObject, Exception caseExpectedException);
+    [Test]
+    [TestCaseSource(nameof(StaticTryGetValueFunctionTestCases))]
+    public void StaticTryGetValueFunctionTest(System.Object caseProvidedObject, string caseProvidedKey, bool caseExpectedResult, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticNullInitializerTestCases))]
-    public void StaticNullInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    public void StaticNullInitializerTest(System.Object caseProvidedObject, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticInterfaceCopyInitializerTestCases))]
-    public void StaticInterfaceCopyInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    public void StaticInterfaceCopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticCopyInitializerTestCases))]
-    public void StaticCopyInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue);
+    public void StaticCopyInitializerTest(System.Object caseProvidedInitialObject, System.Object caseProvidedObject, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticDictionaryInterfaceInitializerTestCases))]
-    public void StaticDictionaryInterfaceInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue);
+    public void StaticDictionaryInterfaceInitializerTest(System.Object caseProvidedInitialObject, IDictionary<string, System.Object> caseProvidedDictionaryInterface, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticDictionaryInitializerTestCases))]
-    public void StaticDictionaryInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue);
+    public void StaticDictionaryInitializerTest(System.Object caseProvidedInitialObject, Dictionary<string, System.Object> caseProvidedDictionary, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticKVPairInitializerTestCases))]
-    public void StaticKVPairInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue);
+    public void StaticKVPairInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object> caseProvidedKVPair, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticKVPairArrayInitializerTestCases))]
-    public void StaticKVPairArrayInitializerTest(Object caseProvidedObjectInstance, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue);
+    public void StaticKVPairArrayInitializerTest(System.Object caseProvidedInitialObject, KeyValuePair<string, System.Object>[] caseProvidedKVPairArray, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticElementArraysInitializerTestCases))]
-    public void StaticElementArraysInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
+    public void StaticElementArraysInitializerTest(System.Object caseProvidedInitialObject, string[] caseProvidedKeyArray, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue, Exception caseExpectedException);
     [Test]
     [TestCaseSource(nameof(StaticValueArrayInitializerTestCases))]
-    public void StaticValueArrayInitializerTest(Object caseProvidedObjectInstance, System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue);
+    public void StaticValueArrayInitializerTest(System.Object caseProvidedInitialObject, System.Object[] caseProvidedValueArray, System.Object caseExpectedValue, Exception caseExpectedException);
 }

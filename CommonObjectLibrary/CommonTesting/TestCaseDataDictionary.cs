@@ -1,3 +1,5 @@
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
+
 namespace NUnit.Framework;
 
 public class TestCaseDataDictionary : Dictionary<String, Object[]>
@@ -24,7 +26,23 @@ public class TestCaseDataDictionary : Dictionary<String, Object[]>
     public TestCaseDataDictionary(String[] TestCaseDescriptions, String[] TestCaseCategories, String[] TestCaseIds, TestCaseData[] TestCaseData)
     {
         int max = int.Max(TestCaseData.Length, int.Max(TestCaseIds.Length, int.Max(TestCaseCategories.Length, TestCaseDescriptions.Length)));
-        if (TestCaseData.Length != max || TestCaseIds.Length != max || (TestCaseCategories.Length != max && TestCaseCategories.Length != 1) || TestCaseDescriptions.Length != max) throw new InvalidArgumentException("invalid combination of argument array lengths!");
+        if (TestCaseData.Length != max || TestCaseIds.Length != max || (TestCaseCategories.Length != max && TestCaseCategories.Length != 1) || TestCaseDescriptions.Length != max)
+        {
+            string message = "invalid combination of argument array lengths!  ";
+            if (TestCaseData.Length != max) message += "(TestCaseData Length of " + TestCaseData.Length.ToString() + " with expected of " + max.ToString() + ")";
+            if (TestCaseIds.Length != max) message += "(TestCaseIds Length of " + TestCaseIds.Length.ToString() + " with expected of " + max.ToString() + ")";
+            if (TestCaseCategories.Length != max && TestCaseCategories.Length != 1) message += "(TestCaseCategories Length of " + TestCaseCategories.Length.ToString() + " with expected of " + max.ToString() + ")";
+            if (TestCaseDescriptions.Length != max) message += "(TestCaseDescriptions Length of " + TestCaseDescriptions.Length.ToString() + " with expected of " + max.ToString() + ")";
+            message += "Ids[";
+            string sep = "";
+            foreach (string id in TestCaseIds)
+            {
+                message += sep + " " + id;
+                sep = ",";
+            }
+            message += "]";
+            throw new InvalidArgumentException(message);
+        }
         List<String> descriptions = [];
         List<String> categories = [];
         List<String> caseIds = [];
