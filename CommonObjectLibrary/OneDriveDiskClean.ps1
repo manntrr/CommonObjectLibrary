@@ -1,0 +1,1 @@
+& "C:\Users\$env:USERNAME\OneDriveDiskClean.ps1"
